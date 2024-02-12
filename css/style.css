@@ -8,15 +8,15 @@ body{
     font-family: 'Outfit', sans-serif;
 }
 
+#main{
+    width: 1000px;
+    height: 800px;
+}
+
 #mainContainer img{
 
     width: 20%;
 
-}
-
-
-#welcome_page_title{
-    font-size: 30px;
 }
 
 #welcomeContainer{
@@ -28,32 +28,32 @@ body{
 }
 
 #welcomeContainer h2{
-    font-size: 9rem;
-    margin: 130px 0 80px 0;
-    line-height: 6rem;
+    margin: 60px 0 30px 0;
+    font-size: 3rem;
+    line-height: 2.5rem;
 }
 
 #welcomeContainer h3 {
     color: #C2148E;
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #welcomeContainer p, #welcomeContainer ul{
-    font-size: 1.9rem;
-    font-weight: 200;
-    margin-bottom: 80px;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 40px;
 }
 
 #welcomeContainer ul {
     list-style-type: disc;
-    margin: 30px 0 120px 40px;
+    margin: 0 0 100px 25px;
 }
 
 #welcomeFooter {
     color: #FFF;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -61,9 +61,9 @@ body{
 
 #agree_terms{
     width: 30px;
-    height: 30px;
+    height: 15px;
     border: 1px solid #FFF;
-    background-color: #00000000;
+    background-color: #0B113C;
 }
 
 
