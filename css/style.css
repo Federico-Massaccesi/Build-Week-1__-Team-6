@@ -1,13 +1,113 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
 
+body{
     background-image: url(../assets/img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 100px;
+    color: white;
 }
 
 #mainContainer img{
-
     width: 20%;
+}
 
+.scritte{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 7em;
+
+}
+
+.scritte h2{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.5rem;
+}
+
+.scritte h3{
+    font-family: 'Outfit';
+    font-style: bold;
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.risposte{
+    text-align: center;
+    margin: 2em;
+    color: white;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+#risp1{
+    border: 2px solid white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    margin: 3em;
+    border-radius: 50px;
+    width: 40%;
+    box-sizing: border-box;
+    float: left;
+}
+
+#risp2{
+    border: 2px solid white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    margin: 3em;
+    border-radius: 50px;
+    width: 40%;
+    box-sizing: border-box;
+    float: right;
+    background-color: #a01282;
+}
+
+#risp3{
+    border: 2px solid white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    margin: 3em;
+    border-radius: 50px;
+    width: 40%;
+    box-sizing: border-box;
+    float: left;
+}
+
+#risp4{
+    border: 2px solid white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    margin: 3em;
+    border-radius: 50px;
+    width: 40%;
+    box-sizing: border-box;
+    float: right;
+}
+
+.nDomande{
+    text-align: center;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    position: absolute;
+    margin-top: 30%;
+    padding-left: 40%;
+}
+
+#rosa{
+    color: #a01282;
 }
