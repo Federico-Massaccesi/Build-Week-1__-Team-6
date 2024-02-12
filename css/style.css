@@ -1,61 +1,83 @@
-body{
-
+body {
     background-image: url(../assets/img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 100px;
+    margin: 0;
 }
 
-#mainContainer img{
-
-    width: 20%;
-
+#mainContainer img {
+    width: 15%;
 }
 
-:root{
-    font-family: 'Poppins', sans-serif;
+:root {
+    font-family: 'Outfit', sans-serif;
 }
 
-#Title{
+#Title {
     color: white;
     text-align: center;
     font-size: 2em;
     padding: 40px;
-    margin-bottom: 60px;
 }
 
-.bold{
+.bold {
     font-weight: bold;
     color: white;
 }
 
-#Corpo{
+#Corpo {
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
-.Centro h4{
-    color: #00FFFF;
+.Centro,
+.Sinistra,
+.Destra {
+    margin: 0 auto; 
+    max-width: 960px; 
 }
 
-.Centro{
+.Centro h4 {
+    color: #00FFFF; 
+}
+
+.Centro {
     color: white;
     text-align: center;
-    font-size: 17px;
+    font-size: 25px;
+    padding: 50px;
 }
 
-.Centro p{
+.Centro p {
     padding: 25px;
     margin: 10px 20px 20px 10px;
     font-size: 13px;
 }
 
-.Sinistra{
+.Sinistra,
+.Destra {
     color: white;
     font-size: 40px;
+    padding: 50px;
 }
 
-.Sinistra p{
+.Sinistra p,
+.Destra p {
     font-size: 20px;
 }
 
+#Btn {
+    margin: 0 auto; 
+    display: block; 
+    padding: 25px;
+    width: 10%;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border: 1px solid white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
