@@ -1,13 +1,81 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
 
+body{
     background-image: url(../assets/img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 100px;
+    font-family: 'Outfit', sans-serif;
 }
 
 #mainContainer img{
 
     width: 20%;
 
+}
+
+
+#welcome_page_title{
+    font-size: 30px;
+}
+
+#welcomeContainer{
+    color: #FFF;
+}
+
+#welcomeContainer .bold{
+    font-weight: 700;
+}
+
+#welcomeContainer h2{
+    font-size: 9rem;
+    margin: 130px 0 80px 0;
+    line-height: 6rem;
+}
+
+#welcomeContainer h3 {
+    color: #C2148E;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#welcomeContainer p, #welcomeContainer ul{
+    font-size: 1.9rem;
+    font-weight: 200;
+    margin-bottom: 80px;
+}
+
+#welcomeContainer ul {
+    list-style-type: disc;
+    margin: 30px 0 120px 40px;
+}
+
+#welcomeFooter {
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+#welcomeFooter label {
+    
+}
+#agree_terms{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #FFF;
+    background-color: #00000000;
+}
+
+
+.btnNeon {
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 20px 50px;
+    background-color: #00FFFF;
+    border: none;
+    box-shadow: 0px 0px 39px 8px #00FFFF80;
+    margin-left: auto;
 }
