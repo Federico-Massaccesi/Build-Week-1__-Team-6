@@ -16,7 +16,7 @@ body{
 
 #feedbackPage {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 150px;
 }
 
 #intestazione {
@@ -26,7 +26,7 @@ body{
 }
 
 .testi {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     font-size: 2rem;
     font-weight: 400;
 }
@@ -36,23 +36,31 @@ body{
     margin: 10px;
 }
 
+.stelle{
+    margin-bottom: 90px;
+}
+
 .feed {
-    padding-left: 30px;
+    padding-left: 22px;
     padding-bottom: 10px;
-    width: 70%;
+    width: 48%;
     background-color: transparent;
     border: none;
     border-bottom: solid 1px #941279 ;
+    font-size: 1.2rem;
 }
 
-button {
+.btnNeon {
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: 2rem;
-    padding: 20px 40px;
-    border
+    padding: 25px 60px 25px 60px;
+    margin-top: 80px;
+    background-color: #00FFFF;
+    -webkit-box-shadow:0px 0px 47px 2px rgba(0,255,255,0.9);
+    -moz-box-shadow: 0px 0px 47px 2px rgba(0,255,255,0.9);
+    box-shadow: 0px 0px 47px 2px rgba(0,255,255,0.9);
 }
-
 
 
 
