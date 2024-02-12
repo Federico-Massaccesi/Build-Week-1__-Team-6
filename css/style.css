@@ -15,22 +15,21 @@ body{
 .scritte{
     text-align: center;
     color: rgb(255, 255, 255);
-    margin-top: 7em;
-
+    margin-top: 3em;
 }
 
 .scritte h2{
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 .scritte h3{
     font-family: 'Outfit';
     font-style: bold;
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .risposte{
@@ -40,61 +39,52 @@ body{
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 70%);
+    justify-content: center;
 }
 
 
 #risp1{
     border: 2px solid white;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-left: 4em;
-    padding-right: 4em;
-    margin: 3em;
+    padding: 4em 2em;
     border-radius: 50px;
-    width: 40%;
+    width: 50%;
     box-sizing: border-box;
-    float: left;
+    margin-top: 2em;
+    margin-left: 25em;
 }
 
 #risp2{
     border: 2px solid white;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-left: 4em;
-    padding-right: 4em;
-    margin: 3em;
+    padding: 4em 2em;
     border-radius: 50px;
-    width: 40%;
+    width: 50%;
     box-sizing: border-box;
-    float: right;
     background-color: #a01282;
+    margin-top: 2em;
+    margin-left: 2em;
 }
 
 #risp3{
     border: 2px solid white;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-left: 4em;
-    padding-right: 4em;
-    margin: 3em;
+    padding: 4em 2em;
     border-radius: 50px;
-    width: 40%;
+    width: 50%;
     box-sizing: border-box;
-    float: left;
+    margin-top: 2em;
+    margin-left: 25em;
 }
 
 #risp4{
     border: 2px solid white;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-left: 4em;
-    padding-right: 4em;
-    margin: 3em;
+    padding: 4em 2em;
     border-radius: 50px;
-    width: 40%;
+    width: 50%;
     box-sizing: border-box;
-    float: right;
+    margin-top: 2em;
+    margin-left: 2em;
 }
 
 .nDomande{
@@ -103,9 +93,7 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
-    position: absolute;
-    margin-top: 30%;
-    padding-left: 40%;
+    margin-top: 3em;
 }
 
 #rosa{
