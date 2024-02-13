@@ -54,6 +54,8 @@ body{
     box-sizing: border-box;
     margin-top: 2em;
     margin-left: 25em;
+    background-color: #ffffff0a;
+    opacity: 0.8;
 }
 
 #risp2{
@@ -75,6 +77,8 @@ body{
     box-sizing: border-box;
     margin-top: 2em;
     margin-left: 25em;
+    background-color: #ffffff0a;
+    opacity: 0.8;
 }
 
 #risp4{
@@ -85,6 +89,8 @@ body{
     box-sizing: border-box;
     margin-top: 2em;
     margin-left: 2em;
+    background-color: #ffffff0a;
+    opacity: 0.8;
 }
 
 .nDomande{
