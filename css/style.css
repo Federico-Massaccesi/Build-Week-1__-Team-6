@@ -1,6 +1,6 @@
 
 /*INIZIO CSS WELCOME PAGE*/
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap');
 
 body{
     background-image: url(../assets/img/bg.jpg);
@@ -15,19 +15,14 @@ body{
     height: 100vh;
     padding: 50px 100px;
     box-sizing: border-box;
+    
 }
 
-#HeaderContainer img{
-    box-sizing: border-box;
-    padding: 50px 100px;
-    color: white;
-}
 
 #mainContainer img{
     width: 20%;
 }
 
-}
 
 #welcomeContainer{
     color: #FFF;
@@ -88,6 +83,11 @@ body{
 }
 
 /*FINE CSS WELCOME PAGE*/
+
+
+/*INIZIO CSS BENCHMARK PAGE*/
+
+
 .scritte{
     text-align: center;
     color: rgb(255, 255, 255);
@@ -182,24 +182,11 @@ body{
     color: #a01282;
 }
 
-/*----- FINE ----- Benchmark page Css*/
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
+/*FINE CSS BENCHMARK PAGE*/
 
-body {
-    background-image: url(../assets/img/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 50px;
-    margin: 0;
-}
+/*INIZIO CSS RESULTS PAGE*/
 
-#mainContainer img {
-    width: 15%;
-}
 
-:root {
-    font-family: 'Outfit', sans-serif;
-}
 
 #Title {
     color: white;
