@@ -19,7 +19,13 @@ body{
 
 #HeaderContainer img{
     box-sizing: border-box;
+    padding: 50px 100px;
+    color: white;
+}
+
+#mainContainer img{
     width: 20%;
+}
 
 }
 
@@ -82,3 +88,98 @@ body{
 }
 
 /*FINE CSS WELCOME PAGE*/
+.scritte{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 3em;
+}
+
+.scritte h2{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.scritte h3{
+    font-family: 'Outfit';
+    font-style: bold;
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.risposte{
+    text-align: center;
+    margin: 2em;
+    color: white;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 70%);
+    justify-content: center;
+}
+
+
+#risp1{
+    border: 2px solid white;
+    padding: 4em 2em;
+    border-radius: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 2em;
+    margin-left: 25em;
+    background-color: #ffffff0a;
+    opacity: 0.8;
+}
+
+#risp2{
+    border: 2px solid white;
+    padding: 4em 2em;
+    border-radius: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    background-color: #a01282;
+    margin-top: 2em;
+    margin-left: 2em;
+}
+
+#risp3{
+    border: 2px solid white;
+    padding: 4em 2em;
+    border-radius: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 2em;
+    margin-left: 25em;
+    background-color: #ffffff0a;
+    opacity: 0.8;
+}
+
+#risp4{
+    border: 2px solid white;
+    padding: 4em 2em;
+    border-radius: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 2em;
+    margin-left: 2em;
+    background-color: #ffffff0a;
+    opacity: 0.8;
+}
+
+.nDomande{
+    text-align: center;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 3em;
+}
+
+#rosa{
+    color: #a01282;
+}
+
+/*----- FINE ----- Benchmark page Css*/
