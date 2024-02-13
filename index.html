@@ -13,15 +13,17 @@
 </head>
 
 <body>
-    <div id="main">
-        <div id="mainContainer">
-            <div id="logo">
-                <img src="./assets/img/epicode_logo.png" alt="Logo Epicode">
-            </div>
+    <div id="header">
+        <div id="logo">
+            <img src="./assets/img/epicode_logo.png" alt="Logo Epicode">
         </div>
+    </div>
+    <div id="main">
 <!--LOgo uguale per tutti -->
 <!--INIZIO WELCOME PAGE -->
-        <div id="welcomeContainer">
+        
+<div id="Welcome-page">
+<div id="welcomeContainer">
             <h2>Welcome to <br><span class="bold">your exam</span> </h2>
             <h3>Instructions</h3>
             <p>We don't expect most engineers to know the answers to all of these <br>questions, so don't worry if
@@ -42,11 +44,12 @@
             <label for="agree_terms">I promise to answer myself without help from anyone</label>
             <button class="btnNeon">PROCEED</button>
         </div>
-
+    </div>
         <!--FINE WELCOME PAGE -->
       
-      <!--INIZIO BENCHMARK PAGE-->
-    <div id="Title">
+      <!--INIZIO RESULTS PAGE-->
+    <div id="Results-page">
+      <div id="Title">
         <h2 class="bold">Results</h2>
         <p>The summary of your answers:</p>
     </div>
@@ -76,11 +79,11 @@
     <div id="Btn">
         <span>RATE US</span>
     </div>
-
+</div>
     <!--FINE RESULTS PAGE-->
 
     <!--INIZIO BENCHMARK PAGE-->
-
+<div id="Benchmark-page">
     <div class="scritte">
         <h2>How can I create a</h2>
         <h3>checkbox in HTML</h3>
@@ -109,10 +112,11 @@
     <div class="nDomande">
         <p>QUESTION 1 <span id="rosa">/10</span></p>
     </div>
-
+</div>
     <!--FINE BENCHMARK PAGE-->
 
-    <div id="feedbackPage">
+    <!--INIZIO FEEDBACK PAGE-->
+    <div id="Feedback-page">
         <div>
             <h2 id="intestazione">Tell us how it's going</h2>
             <p class="testi">From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</p>
@@ -137,7 +141,7 @@
             <button class="btnNeon">MORE INFO</button>
         </div>
     </div>
-
+<!--FINE FEEDBACK PAGE -->
     <script src="./js/script.js"></script>
 </body>
 

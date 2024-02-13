@@ -6,22 +6,25 @@ body{
     background-image: url(../assets/img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 50px 100px;
+   
     font-family: 'Outfit', sans-serif;
     color: white;
 }
 
+
+
+
 #main{
-    width: 1000px;
-    height: 100vh;
-    padding: 50px 100px;
+    width: 1200px;
+    height: 700px;
     box-sizing: border-box;
-    
+    margin: 0 auto ;
 }
 
 
-#mainContainer img{
-    width: 20%;
+#header img{
+    width: 13%;
+    margin: 50px 0 25px 150px;
 }
 
 
@@ -54,7 +57,7 @@ body{
 
 #welcomeContainer ul {
     list-style-type: disc;
-    margin: 0 0 100px 25px;
+    margin: 0 0 0px 25px;
 }
 
 #welcomeFooter {
