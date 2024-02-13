@@ -19,15 +19,77 @@
                 <img src="./assets/img/epicode_logo.png" alt="Logo Epicode">
             </div>
         </div>
+    
+<!--LOgo uguale per tutti -->
+<!--INIZIO WELCOME PAGE -->
+        
+<div id="Welcome-page">
+<div id="welcomeContainer">
+            <h2>Welcome to <br><span class="bold">your exam</span> </h2>
+            <h3>Instructions</h3>
+            <p>We don't expect most engineers to know the answers to all of these <br>questions, so don't worry if
+                you're unsure of a few of them.</p>
+
+            <ul>
+                <li>Each question is <span class="bold">timed</span> and can only be <span class="bold">answered
+                        once.</span></li>
+                <li>Changing browser tab or opening other windows will <span class="bold">invalidate the
+                        question.</span></li>
+                <li>This exam will take approx. <span class="bold">0-5 minutes.</span></li>
+            </ul>
+
+        </div>
+
+        <div id="welcomeFooter">
+            <input type="checkbox" id="agree_terms">
+            <label for="agree_terms">I promise to answer myself without help from anyone</label>
+            <button class="btnNeon">PROCEED</button>
+        </div>
+    </div>
+        <!--FINE WELCOME PAGE -->
+      
+      <!--INIZIO RESULTS PAGE-->
+    <div id="Results-page">
+      <div id="Title">
+        <h2 class="bold">Results</h2>
+        <p>The summary of your answers:</p>
+    </div>
+    <div id="Corpo">
+        <div class="Sinistra">
+            <h2>Correct</h2>
+            <h2 class="bold">66.7%</h2>
+            <p>4/6 questions</p>
+        </div>
+        <div class="circleBig">
+            <div class="circle">
+                <div class="Centro">
+                    <h3>Congratulations!</h3>
+                    <h4>You passed the exam.</h4>
+                    <p>We'll send the certificate in few minutes. Check your email (inclouding promotions/
+                        spam
+                        floder)</p>
+                </div>
+            </div>
+        </div>
         <!--LOgo uguale per tutti -->
         <!--INIZIO WELCOME PAGE -->
 
-        <div id="Welcome-page">
-            <div id="welcomeContainer">
-                <h2>Welcome to <br><span class="bold">your exam</span> </h2>
-                <h3>Instructions</h3>
-                <p>We don't expect most engineers to know the answers to all of these <br>questions, so don't worry if
-                    you're unsure of a few of them.</p>
+    <!--INIZIO BENCHMARK PAGE-->
+<div id="Benchmark-page">
+
+    <div class="grandeCerchio">
+        <div class="cerchio">
+            <div class="inside">
+                <h4>SECONDS</h4>
+                <h3>60</h3>
+                <h4>REMAINING</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="scritte">
+        <h2>How can I create a <br> <strong id="grassetto">checkbox in HTML?</strong></h2>
+    </div>
 
                 <ul>
                     <li>Each question is <span class="bold">timed</span> and can only be <span class="bold">answered
@@ -142,8 +204,17 @@
                 <button class="btnNeon">MORE INFO</button>
             </div>
         </div>
-        <!--FINE FEEDBACK PAGE -->
-        <script src="./js/script.js"></script>
+        <div>
+            <p class="testi">Leave us an open feedback about your experience so far</p>
+        </div>
+        <input class= "feed" type="text" placeholder="Write your comment here" required>
+        <div>
+            <button class="btnNeon">MORE INFO</button>
+        </div>
+    </div>
+</div>
+<!--FINE FEEDBACK PAGE -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
