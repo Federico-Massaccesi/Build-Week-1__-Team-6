@@ -183,3 +183,108 @@ body{
 }
 
 /*----- FINE ----- Benchmark page Css*/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
+
+body {
+    background-image: url(../assets/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    margin: 0;
+}
+
+#mainContainer img {
+    width: 15%;
+}
+
+:root {
+    font-family: 'Outfit', sans-serif;
+}
+
+#Title {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    padding: 20px;
+}
+
+.bold {
+    font-weight: bold;
+    color: white;
+}
+
+#Corpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 65vh;
+    position: relative;
+}
+
+.Centro,
+.Sinistra,
+.Destra {
+    max-width: 300px;
+    margin: 40px;
+}
+
+.Centro h4 {
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+.Centro h3 {
+    font-weight: bold;
+}
+
+.Centro {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 30px; 
+    margin-top: 70px;
+    z-index: 1;
+}
+
+.circle{
+    width: 350px;
+    height: 350px;
+    background: transparent;
+    border-radius: 50%;
+    border: 70px solid #00FFFF;
+    overflow: hidden;
+}
+
+.Centro p {
+    padding: 12px; 
+    margin: 10px;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.Sinistra,
+.Destra {
+    color: white;
+    font-size: 70px;
+    padding: 40px;
+}
+
+.Sinistra p,
+.Destra p {
+    font-size: 20px;
+}
+
+#Btn {
+    margin: 10px auto;
+    display: block;
+    padding: 20px;
+    width: 15%;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border: 1px solid white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
