@@ -18,7 +18,7 @@ body{
     width: 1200px;
     height: 700px;
     box-sizing: border-box;
-    margin: 0 auto ;
+    margin: 0 auto;
 }
 
 
@@ -91,30 +91,34 @@ body{
 
 /*INIZIO CSS BENCHMARK PAGE*/
 
+#Welcome-page,
+#Feedback-page,
+#Results-page{
+    display: none;
+}
 
 .scritte{
     text-align: center;
     color: rgb(255, 255, 255);
-    margin-top: 3em;
+    margin-top: 1em;
 }
 
 .scritte h2{
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
-.scritte h3{
+#grassetto{
     font-family: 'Outfit';
     font-style: bold;
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .risposte{
     text-align: center;
-    margin: 2em;
     color: white;
     font-family: 'Outfit';
     font-style: normal;
@@ -179,12 +183,44 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 #rosa{
     color: #a01282;
 }
+
+.inside h4 {
+    font-weight: normal;
+}
+
+.inside h3 {
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.inside {
+    color: white;
+    text-align: center;
+    font-size: 8px;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.cerchio{
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    border-radius: 50%;
+    border: 15px solid #00FFFF;
+    overflow: hidden;
+}
+
+.grandeCerchio{
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 /*FINE CSS BENCHMARK PAGE*/
 
