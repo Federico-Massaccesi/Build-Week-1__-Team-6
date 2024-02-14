@@ -194,10 +194,12 @@ body{
     display: none;
 }
 
+
 #Title {
     color: white;
     text-align: center;
-    font-size: 60px;
+    font-size: 3em;
+
 }
 
 .bold {
@@ -234,21 +236,34 @@ body{
     color: white;
     text-align: center;
     font-size: 20px;
-    padding: 30px; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    padding: 30px;
+    margin-top: 70px;
+    z-index: 1;
 }
 
-.circleBig{
-    position: relative;
-    width: 350px;
-    height: 350px;
+.circle {
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(#00FFFF 3.6deg, #D20094 0deg);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle::before{
+    content: "";
+    position: absolute;
+    height: 340px;
+    width: 340px;
+    border-radius: 50%;
+    background-color: #0B113C;
 }
 
 .Centro p {
-    padding: 12px; 
+    padding: 12px;
     margin: 10px;
     font-size: 15px;
     margin-top: 30px;
@@ -257,7 +272,7 @@ body{
 .Sinistra,
 .Destra {
     color: white;
-    font-size: 60px;
+    font-size: 70px;
     padding: 40px;
 }
 
@@ -269,17 +284,18 @@ body{
 #Btn {
     margin: 0 auto;
     display: block;
-    padding: 16px;
+    padding: 20px;
     width: 15%;
     color: white;
-    font-size: 25px;
+    font-size: 16px;
     cursor: pointer;
     border: 1px solid white;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0 0 20px #900080;
+    box-shadow: 0 0 30px #430465;
 }
+
 
 
 /* FINE RESULT PAGE */
