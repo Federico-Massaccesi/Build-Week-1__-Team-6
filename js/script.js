@@ -25,7 +25,25 @@ svgs.forEach(function(svg) {
 
 // BOTTONE
 
+let button = document.querySelector('.btnNeonFb')
 
+button.addEventListener('click', function() {
+    if (errore.style.display !== "none") {
+    feedbackRequest()
+    }
+})
 
+// MESSAGGIO DI ERRORE
+
+let errore = document.querySelector(".errore").style.display = "none";
+
+function feedbackRequest() {
+    let inputValue = document.querySelector(".feed").value;
+    if (inputValue === "") {
+        errore.style.display = "block";
+    } else {
+        errore.style.display = "none";
+    }
+}
 // FINE FEEDBACK JS
 
