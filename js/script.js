@@ -35,8 +35,9 @@ function display() {
     divWelcomePage.classList.add("display")
     divBenchmarkPage.classList.remove("display")
 }else{
-    divCheck.style.border= '2px solid white'
-    divCheck.style.padding ='5px'
+    divCheck.innerText = "Obbligatorio!"
+    divCheck.style.marginLeft = '100px'
+    divCheck.style.color = "red"
 }
 }
 
