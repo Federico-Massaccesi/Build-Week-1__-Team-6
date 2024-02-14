@@ -293,7 +293,12 @@ body{
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0 0 30px #430465;
+    box-shadow: 0 0 30px #7303af;
+}
+
+
+#Btn:hover{
+    background-color: #D20094;
 }
 
 
