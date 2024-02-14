@@ -28,36 +28,11 @@ for (let i = 0; i < pages.length; i++) {
 
 }
 
-button.addEventListener("click", display)
 
-function display() {
-    if (checkbox.checked) {
-        divWelcomePage.classList.add("display")
-        divBenchmarkPage.classList.remove("display")
-    } else {
-        divCheck.innerText = "Obbligatorio!"
-        divCheck.style.marginLeft = '100px'
-        divCheck.style.color = "red"
-    }
-}
 //BENCHMARK PAGE
 
-let divBenchmarkBtn = document.querySelectorAll('.risposte') //div che contiene i button
+let divBenchmarkBtn = document.querySelector('.risposte') //div che contiene i button
 
-
-//selezione btn benchmark page 
-
-let benchmarkBtn1 = document.querySelector('#risp1')
-
-let benchmarkBtn2 = document.querySelector('#risp2')
-
-let benchmarkBtn3 = document.querySelector('#risp3')
-
-let benchmarkBtn4 = document.querySelector('#risp4')
-
-//ARRAY BUTTON
-
-let allButtonBenchmark = [benchmarkBtn1, benchmarkBtn2, benchmarkBtn3, benchmarkBtn4]
 //div che contiene h2 con la domanda
 
 let domanda = document.querySelector('.scritte')
@@ -69,21 +44,40 @@ let questionNumber = document.querySelector('.nDomande')
 
 
 
+
+
 fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
     .then(response => response.json())
     .then(dati => {
 
-        console.log(dati.results);
+        button.addEventListener('click', () => {
+            display();
+            mandaDomande();
+        });
+        
+        
+        function display() {
+            if (checkbox.checked) {
+                divWelcomePage.classList.add("display")
+                divBenchmarkPage.classList.remove("display")
+            } else {
+                divCheck.innerText = "Obbligatorio!"
+                divCheck.style.marginLeft = '100px'
+                divCheck.style.color = "red"
+            }
+        }
 
         function mandaDomande() {
 
-            let random = dati.results[Math.floor(Math.random()*dati.results.length)]
+            let random = dati.results[Math.floor(Math.random() * dati.results.length)]
 
             let risposteSbagliate = random.incorrect_answers
 
             let rispostaGiusta = random.correct_answer
+            console.log(rispostaGiusta);
 
-            let risposteTotali = risposteSbagliate.length += rispostaGiusta.lenght
+            let risposteTotali = risposteSbagliate.push(rispostaGiusta)
+            console.log(risposteTotali);
 
             let domandaSingola = random.question
 
@@ -95,11 +89,14 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
             console.log(domanda);
 
-            /*for (let i = 1; i < risposteTotali.length; i++) {
+            for (let i = 1; i < risposteTotali.length; i++) {
                 let benchmarkBtn = document.createElement("button")
-                benchmarkBtn.setattribute("id","risp")
-                
-            }*/
+                benchmarkBtn.classList.add("risp")
+                divBenchmarkBtn.append(benchmarkBtn)
+            }
+
+            //ARRAY BUTTON
+            let allButtonBenchmark = querySelectorAll(".risp")
 
             //SELEZIONE BUTTON CASUALE
             let randomButton = allButtonBenchmark[Math.floor(Math.random() * allButtonBenchmark.length)]
@@ -151,6 +148,5 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
         }
 
-        mandaDomande();
     })
 
