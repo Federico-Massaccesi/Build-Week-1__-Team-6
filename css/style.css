@@ -99,6 +99,11 @@ input[type="checkbox"] {
 
 
 /*INIZIO CSS BENCHMARK PAGE*/
+#Welcome-page,
+#Feedback-page,
+#Results-page{
+display: none;
+}
 
 .scritte {
     text-align: center;
@@ -204,7 +209,12 @@ input[type="checkbox"] {
     border-radius: 50%;
     border: 15px solid #00FFFF;
     overflow: hidden;
+    transition: border-color 1s;
 }
+
+.cerchio.medium {
+    border-color: #e6b000;
+    }
 
 .grandeCerchio {
     position: absolute;
