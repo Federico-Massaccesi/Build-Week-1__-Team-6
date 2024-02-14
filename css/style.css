@@ -344,8 +344,11 @@ input[type="checkbox"] {
     margin: 10px;
 }
 
-.spenta {
-    fill: #0B113B;
+.mySvg {
+    padding: 5px;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
 }
 
 .stelle {
@@ -354,9 +357,8 @@ input[type="checkbox"] {
 
 .feed {
     margin-top: 50px;
-    padding-left: 45px;
-    padding-bottom: 10px;
-    width: 70%;
+    padding: 10px 0;
+    width: 100%;
     background-color: transparent;
     border: none;
     border-bottom: solid 1px #941279;

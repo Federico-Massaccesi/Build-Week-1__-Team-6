@@ -1,3 +1,31 @@
-let svg = document.querySelectorAll('.stella')
-let path = svg.getElementsByTagName('path')
-path.setAttribute('fill', 'red')
+// INIZIO FEEDBACK JS
+
+// STELLE
+
+let svgs = document.querySelectorAll('.mySvg');
+
+function changeColor(event) {
+    let selectedSVG = event.currentTarget;
+
+    svgs.forEach(function(svg, index) {
+        let paths = svg.querySelectorAll('path');
+        paths.forEach(function(path) {
+            if (index <= Array.from(svgs).indexOf(selectedSVG)) {
+                path.setAttribute('fill', 'red');
+            } else {
+                path.setAttribute ('fill', '#384075')
+            }
+        });
+    });
+}
+
+svgs.forEach(function(svg) {
+    svg.addEventListener('click', changeColor);
+});
+
+// BOTTONE
+
+
+
+// FINE FEEDBACK JS
+
