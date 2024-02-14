@@ -24,22 +24,29 @@ timeLeft--;
 
 timer.textContent = formatTime(timeLeft);
 
-if (timeLeft < 60) {
-circle.classList.add("high");
-};
-if (timeLeft < 45) {
-circle.classList.add("mid");
-};
-if (timeLeft < 30) {
-circle.classList.add("medium");
-};
-if (timeLeft < 15) {
-circle.classList.add("low");
-};
+
 if (timeLeft === 0) {
 clearInterval(interval);
 }
 }
-let interval = setInterval(updateTimer, 1000);
 
+let interval = setInterval(updateTimer, 1000);
 /*FINE SCRIPT TIMER*/
+
+
+let circleProgress = document.querySelector('.cerchio'),
+centro = document.querySelector('.inside');
+
+let centroStartValue = 100,
+    centroEndValue = 0,
+    speed = 1000;
+
+let progress = setInterval(() => {
+    centroStartValue--;
+
+    circleProgress.style.background = `conic-gradient(#00FFFF ${centroStartValue * 3.6}deg, transparent 0deg)`
+
+    if(centroEndValue === centroStartValue){
+        clearInterval(progress);
+    }
+}, speed);
