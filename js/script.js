@@ -44,6 +44,7 @@ function display() {
 
 let divBenchmarkBtn = document.querySelectorAll('.risposte') //div che contiene i button
 
+
 //selezione btn benchmark page 
 
 let benchmarkBtn1 = document.querySelector('#risp1')
@@ -57,7 +58,6 @@ let benchmarkBtn4 = document.querySelector('#risp4')
 //ARRAY BUTTON
 
 let allButtonBenchmark = [benchmarkBtn1, benchmarkBtn2, benchmarkBtn3, benchmarkBtn4]
-
 //div che contiene h2 con la domanda
 
 let domanda = document.querySelector('.scritte')
@@ -77,17 +77,13 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
         function mandaDomande() {
 
-            let random = dati.results[Math.floor(Math.random() * dati.results.length)]
+            let random = dati.results[Math.floor(Math.random()*dati.results.length)]
 
             let risposteSbagliate = random.incorrect_answers
 
             let rispostaGiusta = random.correct_answer
 
-            //SELEZIONE BUTTON CASUALE
-            let randomButton = allButtonBenchmark[Math.floor(Math.random() * allButtonBenchmark.length)]
-
-            //SELEZIONE RISPOSTA SBAGLIATA CASUALE
-            let rispostaSbagliataRandom = risposteSbagliate[Math.floor(Math.random() * risposteSbagliate.length)]
+            let risposteTotali = risposteSbagliate.length += rispostaGiusta.lenght
 
             let domandaSingola = random.question
 
@@ -96,7 +92,33 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
             h2.innerHTML = domandaSingola
 
             domanda.append(h2)
-            
+
+            console.log(domanda);
+
+            /*for (let i = 1; i < risposteTotali.length; i++) {
+                let benchmarkBtn = document.createElement("button")
+                benchmarkBtn.setattribute("id","risp")
+                
+            }*/
+
+            //SELEZIONE BUTTON CASUALE
+            let randomButton = allButtonBenchmark[Math.floor(Math.random() * allButtonBenchmark.length)]
+
+            //SELEZIONE RISPOSTA SBAGLIATA CASUALE
+            let rispostaSbagliataRandom = risposteSbagliate[Math.floor(Math.random() * risposteSbagliate.length)]
+
+            for (let i = 0; i < allButtonBenchmark.length; i++) {
+                randomButton.innerHTML = rispostaSbagliataRandom
+
+                if (randomButton.innerHTML = rispostaSbagliataRandom) {
+                    randomButton.innerHTML = rispostaSbagliataRandom
+                }
+
+            }
+
+            console.log(randomButton);
+
+            console.log(rispostaSbagliataRandom);
             /*do {
                 domandaSingola
             } while (domandeUscite.includes(domandaSingola));
