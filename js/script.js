@@ -14,13 +14,13 @@ let divResultsPage = document.querySelector("#Results-page")
 let divfeedbackPage = document.querySelector("#Feedback-page")
 
 //SELEZIONE CHECKBOX
-let checkbox = document.querySelector('#agree_terms')
+let checkbox= document.querySelector('#agree_terms')
 
 //SELEZIONE DIV CHECKBOX
 
 let divCheck = document.querySelector('#div-check')
 
-let pages = [divBenchmarkPage, divResultsPage, divfeedbackPage]
+let pages =[divBenchmarkPage, divResultsPage, divfeedbackPage]
 
 for (let i = 0; i < pages.length; i++) {
 
@@ -31,14 +31,14 @@ for (let i = 0; i < pages.length; i++) {
 button.addEventListener("click", display)
 
 function display() {
-    if (checkbox.checked) {
-        divWelcomePage.classList.add("display")
-        divBenchmarkPage.classList.remove("display")
-    } else {
-        divCheck.innerText = "Campo obbligatorio!"
-        divCheck.style.marginLeft = "5px"
-        divCheck.style.color = "red"
-    }
+    if(checkbox.checked){
+    divWelcomePage.classList.add("display")
+    divBenchmarkPage.classList.remove("display")
+}else{
+    divCheck.innerText = "Obbligatorio!"
+    divCheck.style.marginLeft = '100px'
+    divCheck.style.color = "red"
+}
 }
 //BENCHMARK PAGE
 
@@ -56,98 +56,65 @@ let benchmarkBtn4 = document.querySelector('#risp4')
 
 //ARRAY BUTTON
 
-let allButtonBenchmark = [benchmarkBtn1, benchmarkBtn2, benchmarkBtn3, benchmarkBtn4]
+let allButtonBenchmark = [benchmarkBtn1,benchmarkBtn2,benchmarkBtn3,benchmarkBtn4]
 
-//div che contiene h2 con la domanda
+ //div che contiene h2 con la domanda
 
-let domanda = document.querySelector('.scritte')
+let domanda = document.querySelector('.scritte') 
 
 let punteggio = 0
 
 let questionNumber = document.querySelector('.nDomande')
 
-//RISPOSTE
-
-
 fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
-    .then(response => response.json())
-    .then(dati => {
+  .then(response => response.json())
+  .then(dati => {
 
-        console.log(dati.results);
+    console.log(dati.results);
+    
+    function mandaDomande(){
+    
+    let random = dati.results[Math.floor(Math.random()*dati.results.length )]
+    
+    let domandaSingola = random.question
+    
+    let h2 = document.querySelector('#domanda')
+    
+    h2.innerHTML = domandaSingola
+    
+    domanda.append(h2)
+    
+    /*do {
+        domandaSingola
+    } while (domandeUscite.includes(domandaSingola));
+    domandeUscite.push(domandaSingola)
+    return domandeUscite*/
 
-        function mandaDomande() {
-            //INZIIO SELEZIONE E ASSEGANZIONE DOMANDA
+    for (let i = 0; i < allButtonBenchmark.length; i++) {
+        
+        allButtonBenchmark[i].addEventListener('click',buttonColor)
+        
+        function buttonColor(){
+    
+            allButtonBenchmark[i].style.backgroundColor = '#D20094'
 
-            //SELEZIONE OGGETTO CAUSALE
-            let random = dati.results[Math.floor(Math.random() * dati.results.length)]
+            setTimeout(function() {
+    
+                mandaDomande();
+        
+                setTimeout(function() {
+    
+                    allButtonBenchmark[i].style.backgroundColor = ''; // Ripristina il colore del pulsante
+                }, 0); // Intervallo di 1 secondo per ripristinare il colore del pulsante
+            }, 800);
             
-            //ASSEGNAZIONE DOMANDE E ALLA VARIABILE 
-            let domandaSingola = random.question
-            let risposteSbagliate = random.incorrect_answers
-            let rispostaGiusta = random.correct_answer
-            let risposteUsate = []
-            
-            //SELEZIONE H2
-            let h2 = document.querySelector('#domanda')
-
-            //ASSEGNAZIONE DOMANDA H2
-            h2.innerHTML = domandaSingola
-
-            domanda.append(h2)
-
-            console.log(risposteSbagliate);
-            console.log(rispostaGiusta);
-
-            //FINE SELEZIONE E ASSEGANZIONE DOMANDA
-
-            //INIZIO SELEZIONE E ASSEGANZIONE RISPOSTE
-            for (let i = 0; i < allButtonBenchmark.length; i++) {
-                allButtonBenchmark[i].innerHTML =  risposteSbagliate[i]
-                
-                risposteUsate.push(risposteSbagliate[i])
-
-                if (risposteUsate.length == 3) {
-                    allButtonBenchmark[i].innerHTML = rispostaGiusta
-                }
-                console.log(risposteUsate);
-            }
         }
-        /*do {
-            domandaSingola
-        } while (domandeUscite.includes(domandaSingola));
-        domandeUscite.push(domandaSingola)
-        return domandeUscite*/
-
-        for (let i = 0; i < allButtonBenchmark.length; i++) {
-
-            allButtonBenchmark[i].addEventListener('click', buttonColor)
-
-            function buttonColor() {
-
-                allButtonBenchmark[i].style.backgroundColor = '#D20094'
-
-                setTimeout(function () {
-
-                    mandaDomande();
-
-                    setTimeout(function () {
-
-                        allButtonBenchmark[i].style.backgroundColor = ''; // Ripristina il colore del pulsante
-                    }, 0); // Intervallo di 1 secondo per ripristinare il colore del pulsante
-                }, 800);
-
-            }
+        
+        
+    }
 
 
-        }
+}
 
-
-
-
-        mandaDomande();
-
-
-
-
-
-    })
+mandaDomande();
+})
