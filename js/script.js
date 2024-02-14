@@ -92,20 +92,25 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
             console.log(domanda);
             
+            let allButtonBenchmark= []
+
             for (let i = 0; i < risposteTotali; i++) {
                 let benchmarkBtn = document.createElement("button")
                 benchmarkBtn.classList.add("risp")
                 
                 divBenchmarkBtn.append(benchmarkBtn)
-                console.log(benchmarkBtn);
+                allButtonBenchmark.push(benchmarkBtn)
         }
-            //let allButtonBenchmark = querySelectorAll(".risp")
+            
+        
+        //let allButtonBenchmark = querySelectorAll(".risp")
+
 
             //ARRAY BUTTON
             
             //SELEZIONE BUTTON CASUALE
             /*let randomButton = allButtonBenchmark[Math.floor(Math.random() * allButtonBenchmark.length)]
-
+        console.log(randomButton);
             //SELEZIONE RISPOSTA SBAGLIATA CASUALE
             let rispostaSbagliataRandom = risposteSbagliate[Math.floor(Math.random() * risposteSbagliate.length)]
 
