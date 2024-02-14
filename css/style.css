@@ -284,17 +284,16 @@ body{
 #Btn {
     margin: 0 auto;
     display: block;
-    padding: 20px;
+    padding: 30px;
     width: 15%;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
     border: 1px solid white;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
     box-shadow: 0 0 30px #7303af;
-    margin-top: 5px;
 }
 
 
