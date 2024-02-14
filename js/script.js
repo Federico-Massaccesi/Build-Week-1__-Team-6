@@ -85,38 +85,38 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
             h2.innerHTML = domandaSingola
 
             domanda.append(h2)
+        }
+        /*do {
+            domandaSingola
+        } while (domandeUscite.includes(domandaSingola));
+        domandeUscite.push(domandaSingola)
+        return domandeUscite*/
 
-            /*do {
-                domandaSingola
-            } while (domandeUscite.includes(domandaSingola));
-            domandeUscite.push(domandaSingola)
-            return domandeUscite*/
+        for (let i = 0; i < allButtonBenchmark.length; i++) {
 
-            for (let i = 0; i < allButtonBenchmark.length; i++) {
+            allButtonBenchmark[i].addEventListener('click', buttonColor)
 
-                allButtonBenchmark[i].addEventListener('click', buttonColor)
+            function buttonColor() {
 
-                function buttonColor() {
+                allButtonBenchmark[i].style.backgroundColor = '#D20094'
 
-                    allButtonBenchmark[i].style.backgroundColor = '#D20094'
+                setTimeout(function () {
+
+                    mandaDomande();
 
                     setTimeout(function () {
 
-                        mandaDomande();
-
-                        setTimeout(function () {
-
-                            allButtonBenchmark[i].style.backgroundColor = ''; // Ripristina il colore del pulsante
-                        }, 0); // Intervallo di 1 secondo per ripristinare il colore del pulsante
-                    }, 800);
-
-                }
-
+                        allButtonBenchmark[i].style.backgroundColor = ''; // Ripristina il colore del pulsante
+                    }, 0); // Intervallo di 1 secondo per ripristinare il colore del pulsante
+                }, 800);
 
             }
 
 
         }
+
+
+
 
         mandaDomande();
 
