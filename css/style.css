@@ -18,7 +18,8 @@ body {
 }
 
 
-#mainContainer img {
+
+#header img {
     width: 20%;
 }
 
@@ -129,7 +130,7 @@ input[type="checkbox"] {
     display: grid;
     grid-template-columns: repeat(2, 70%);
     justify-content: center;
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 #risp1,
@@ -172,7 +173,7 @@ input[type="checkbox"] {
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
-    margin-top: 6em;
+    margin-top: 3em;
 }
 
 #rosa {
@@ -224,7 +225,7 @@ input[type="checkbox"] {
     color: white;
     text-align: center;
     font-size: 3em;
-    padding: 20px;
+    
 }
 
 .bold {
@@ -296,12 +297,12 @@ input[type="checkbox"] {
 }
 
 #Btn {
-    margin: 10px auto;
+    margin: 0 auto;
     display: block;
     padding: 20px;
     width: 15%;
     color: white;
-    font-size: 25px;
+    font-size: 16px;
     cursor: pointer;
     border: 1px solid white;
     text-decoration: none;
