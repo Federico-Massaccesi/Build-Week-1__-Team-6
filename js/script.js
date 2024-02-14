@@ -35,8 +35,8 @@ function display() {
     divWelcomePage.classList.add("display")
     divBenchmarkPage.classList.remove("display")
 }else{
-    divCheck.innerText = "Obbligatorio!"
-    divCheck.style.marginLeft = '100px'
+    divCheck.innerText = "Campo obbligatorio!"
+    divCheck.style.marginLeft = "5px"
     divCheck.style.color = "red"
 }
 }
