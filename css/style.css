@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap');
+/*display none*/
+#Welcome-page, #Benchmark-page, #Results-page {
+    display: none;
+}
 
 /*INIZIO CSS GENERALI*/
 
@@ -335,9 +339,13 @@ input[type="checkbox"] {
     font-weight: 400;
 }
 
-.stella {
+.stella-box {
     display: inline-block;
     margin: 10px;
+}
+
+.spenta {
+    fill: #0B113B;
 }
 
 .stelle {
