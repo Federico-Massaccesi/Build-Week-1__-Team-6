@@ -242,8 +242,8 @@ body{
 }
 
 .circle {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     background: conic-gradient(#00FFFF 3.6deg, #D20094 0deg);
     border-radius: 50%;
     overflow: hidden;
@@ -256,8 +256,8 @@ body{
 .circle::before{
     content: "";
     position: absolute;
-    height: 340px;
-    width: 340px;
+    height: 320px;
+    width: 320px;
     border-radius: 50%;
     background-color: #0B113C;
 }
@@ -273,7 +273,7 @@ body{
 .Destra {
     color: white;
     font-size: 70px;
-    padding: 40px;
+    padding: 80px;
 }
 
 .Sinistra p,
@@ -287,13 +287,14 @@ body{
     padding: 20px;
     width: 15%;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     border: 1px solid white;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
     box-shadow: 0 0 30px #7303af;
+    margin-top: 5px;
 }
 
 
