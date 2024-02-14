@@ -11,7 +11,7 @@ function changeColor(event) {
         let paths = svg.querySelectorAll('path');
         paths.forEach(function(path) {
             if (index <= Array.from(svgs).indexOf(selectedSVG)) {
-                path.setAttribute('fill', 'red');
+                path.setAttribute('fill', '#00FFFF');
             } else {
                 path.setAttribute ('fill', '#384075')
             }
