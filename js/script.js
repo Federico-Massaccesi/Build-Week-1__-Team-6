@@ -67,40 +67,44 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
                 divCheck.style.color = "red"
             }
         }
+        
+        
 
         function mandaDomande() {
-
+            
             let random = dati.results[Math.floor(Math.random() * dati.results.length)]
-
+            
             let risposteSbagliate = random.incorrect_answers
-
+            
             let rispostaGiusta = random.correct_answer
             console.log(rispostaGiusta);
-
+            
             let risposteTotali = risposteSbagliate.push(rispostaGiusta)
             console.log(risposteTotali);
 
             let domandaSingola = random.question
-
+            
             let h2 = document.querySelector('#domanda')
-
+            
             h2.innerHTML = domandaSingola
 
             domanda.append(h2)
 
             console.log(domanda);
-
-            for (let i = 1; i < risposteTotali.length; i++) {
+            
+            for (let i = 0; i < risposteTotali; i++) {
                 let benchmarkBtn = document.createElement("button")
                 benchmarkBtn.classList.add("risp")
+                
                 divBenchmarkBtn.append(benchmarkBtn)
-            }
+                console.log(benchmarkBtn);
+        }
+            //let allButtonBenchmark = querySelectorAll(".risp")
 
             //ARRAY BUTTON
-            let allButtonBenchmark = querySelectorAll(".risp")
-
+            
             //SELEZIONE BUTTON CASUALE
-            let randomButton = allButtonBenchmark[Math.floor(Math.random() * allButtonBenchmark.length)]
+            /*let randomButton = allButtonBenchmark[Math.floor(Math.random() * allButtonBenchmark.length)]
 
             //SELEZIONE RISPOSTA SBAGLIATA CASUALE
             let rispostaSbagliataRandom = risposteSbagliate[Math.floor(Math.random() * risposteSbagliate.length)]
@@ -112,11 +116,11 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
                     randomButton.innerHTML = rispostaSbagliataRandom
                 }
 
-            }
+            }*/
 
-            console.log(randomButton);
+            
 
-            console.log(rispostaSbagliataRandom);
+            
             /*do {
                 domandaSingola
             } while (domandeUscite.includes(domandaSingola));
