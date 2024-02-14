@@ -66,6 +66,9 @@ let punteggio = 0
 
 let questionNumber = document.querySelector('.nDomande')
 
+//RISPOSTE
+
+
 fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
     .then(response => response.json())
     .then(dati => {
@@ -73,18 +76,28 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
         console.log(dati.results);
 
         function mandaDomande() {
+            //INZIIO SELEZIONE E ASSEGANZIONE DOMANDA
 
+            //SELEZIONE OGGETTO CAUSALE
             let random = dati.results[Math.floor(Math.random() * dati.results.length)]
-
+            //ASSEGNAZIONE DOMANDA ALLA VARIABILE 
             let domandaSingola = random.question
 
-            let testo = document.createElement('h2')
+            //SELEZIONE H2
+            let h2 = document.querySelector('#domanda')
 
-            let h2 = document.querySelector('h2')
-
+            //ASSEGNAZIONE DOMANDA H2
             h2.innerHTML = domandaSingola
 
             domanda.append(h2)
+
+            //FINE SELEZIONE E ASSEGANZIONE DOMANDA
+
+            //INIZIO SELEZIONE E ASSEGANZIONE RISPOSTE
+            for (let i = 0; i < dati.results.length; i++) {
+                const element = array[i];
+
+            }
         }
         /*do {
             domandaSingola
