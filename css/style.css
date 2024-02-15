@@ -99,9 +99,6 @@ input[type="checkbox"] {
 #btnNeonWelcomePage{
     margin: 0 0 0 170px;
 }
-/*FINE CSS WELCOME PAGE*/
-
-
 /*INIZIO CSS BENCHMARK PAGE*/
 
 .scritte {
@@ -168,38 +165,68 @@ input[type="checkbox"] {
 
 .inside h4 {
     font-weight: normal;
+    font-size: 11px;
 }
 
 .inside h3 {
     font-weight: normal;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .inside {
-    color: white;
+    color: rgb(3, 198, 3);
     text-align: center;
-    font-size: 8px;
-    margin-top: 20px;
+    font-size: 9px;
+    margin-top: 5px;
     z-index: 1;
 }
 
+
 .cerchio {
-    width: 100px;
-    height: 100px;
-    background: transparent;
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(#00FFFF 0.1deg, transparent 0deg);
     border-radius: 50%;
-    border: 15px solid #00FFFF;
     overflow: hidden;
+    box-shadow: 0 0 40px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cerchio::before{
+    content: "";
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    background-color: #0B113C;
 }
 
 .grandeCerchio {
     position: absolute;
-    right: 250px;
+    right: 270px;
     top: 60px;
 }
 
 .rispSelezionata {
     background-color: #a01282;
+}
+
+#timer.high{
+    color: rgb(3, 198, 3);
+}
+
+#timer.mid {
+    color: #ffff00;
+}
+
+#timer.medium {
+    color: rgb(255, 149, 0);
+}
+
+#timer.low {
+    color: red;
 }
 
 /*FINE CSS BENCHMARK PAGE*/

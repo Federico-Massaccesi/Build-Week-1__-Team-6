@@ -44,9 +44,6 @@ let punteggio = 0
 let questionNumber = document.querySelector('.nDomande p')
 
 
-
-
-
 fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
     .then(response => response.json())
     .then(dati => {
@@ -55,6 +52,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
             display();
             mandaDomande();
         });
+
 
 
         function display() {
@@ -91,34 +89,115 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
         let h2 = document.querySelector('#domanda')
         let benchmarkBtn;
         let domandaAttuale = 0
-    
         function mandaDomande() {
+            /*INIZIO SCRIPT TIMER*/
+
+            let timeLeft = 60;
+
+            let timer = document.getElementById("timer");
+
+            let circle = document.querySelector(".cerchio");
+
+            //formatta il tempo in SS
+            function formatTime(time) {
+
+                let minutes = Math.floor(time / 60);
+                let seconds = time % 60;
+
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                return seconds;
+            }
+
+            function updateTimer() {
+                // Diminuisce il tempo di un secondo
+                timeLeft--;
+
+                const scritte = document.querySelector(".inside")
+
+                timer.textContent = formatTime(timeLeft);
+                if (timeLeft < 60) {
+                    timer.classList.add("high");
+                    scritte.style.color = "rgb(3, 198, 3)"
+                };
+
+                if (timeLeft < 45) {
+                    timer.classList.remove("high");
+                    timer.classList.add("mid");
+                    scritte.style.color = "#ffff00"
+                };
+
+                if (timeLeft < 30) {
+                    timer.classList.remove("mid");
+                    timer.classList.add("medium");
+                    scritte.style.color = "rgb(255, 149, 0)"
+                }
+
+                if (timeLeft < 15) {
+                    timer.classList.remove("medium");
+                    timer.classList.add("low");
+                    scritte.style.color = "red"
+                };
+
+                if (timeLeft === 0) {
+                    timer.classList.remove("low");
+                    divBenchmarkBtn.innerHTML = ""
+                    divDomanda.innerHTML = ""
+                    clearInterval(interval);
+                    mandaDomande();
+                }
+
+            }
+
+            let interval = setInterval(updateTimer, 1000);
+            /*FINE SCRIPT TIMER*/
+
+            /*INIZIO SCRIPT CERCHIO*/
+            let circleProgress = document.querySelector('.cerchio'),
+                centro = document.querySelector('.inside');
+
+            let centroStartValue = 100,
+                centroEndValue = 0,
+                speed = 600;
+
+            let progress = setInterval(() => {
+                centroStartValue--;
+
+                circleProgress.style.background = `conic-gradient(#00FFFF ${centroStartValue * 3.6}deg, transparent 0deg)`
+
+                if (centroEndValue === centroStartValue) {
+                    clearInterval(progress);
+                }
+            }, speed);
+            /*FINE SCRIPT CERCHIO*/
+
 
             let risposteTotali;
-                
-                let domanda = arrayShuffle[domandaAttuale].question
 
-                console.log(domanda);
+            let domanda = arrayShuffle[domandaAttuale].question
 
-                h2.innerHTML = domanda
+            console.log(domanda);
 
-                divDomanda.append(h2)
+            h2.innerHTML = domanda
 
-                questionNumber.innerHTML = `QUESTION ${domandaAttuale+1} <span id="rosa">/10</span>`;
+            divDomanda.append(h2)
 
-                let risposteSbagliate = arrayShuffle[domandaAttuale].incorrect_answers
+            questionNumber.innerHTML = `QUESTION ${domandaAttuale + 1} <span id="rosa">/10</span>`;
 
-                console.log(risposteSbagliate);
+            let risposteSbagliate = arrayShuffle[domandaAttuale].incorrect_answers
 
-                let rispostaGiusta = arrayShuffle[domandaAttuale].correct_answer
+            console.log(risposteSbagliate);
 
-                console.log(rispostaGiusta);
+            let rispostaGiusta = arrayShuffle[domandaAttuale].correct_answer
 
-                risposteTotali = risposteSbagliate.concat(rispostaGiusta)
-            
+            console.log(rispostaGiusta);
+
+            risposteTotali = risposteSbagliate.concat(rispostaGiusta)
+
             domandaAttuale++;
-            
-            
+
+
             let shuffleRisposte = shuffle(risposteTotali)
 
             console.log(shuffleRisposte);
@@ -138,7 +217,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
             }
 
-            
+
 
             console.log(domandaAttuale);
         }
@@ -149,8 +228,6 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
             setTimeout(function () {
                 btn.style.backgroundColor = ""
-                divBenchmarkBtn.innerHTML = ""
-                divDomanda.innerHTML = ""
                 mandaDomande();
                 // Ripristina il colore del pulsante
             }, 1000); // Intervallo di 1 secondo per ripristinare il colore del pulsante
