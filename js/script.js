@@ -31,8 +31,6 @@ console.log(divBenchmarkBtn);
 
 let divDomanda = document.querySelector('.scritte')
 
-let punteggio = 0
-
 let questionNumber = document.querySelector('.nDomande p')
 
 function display() {
@@ -71,7 +69,7 @@ let interval;
 let timeLeft = 60;
 
 function updateTimer(timeLeft) {
-
+    timer.classList.remove("high", "mid", "medium", "low");
 
     const scritte = document.querySelector(".inside")
 
@@ -127,6 +125,7 @@ function stopInterval() {
         clearInterval(interval);
         interval = undefined;
         timeLeft = 60;
+        updateTimer(timeLeft);
     }
 
     domandaAttuale++;
@@ -140,6 +139,10 @@ function resetHtml() {
 }
 
 /*FINE SCRIPT CERCHIO*/
+
+
+let totaleRisposteSbagliate = 0
+let punteggio = 0
 
 function mandaDomande(oggettoDomanda) {
     let benchmarkBtn;
@@ -195,6 +198,14 @@ function mandaDomande(oggettoDomanda) {
         benchmarkBtn.addEventListener('click', (event) => {
             //buttonColor(event.target);
             stopInterval();
+
+            if (event.innerText == rispostaGiusta) {
+                punteggio++;
+            } else {
+                totaleRisposteSbagliate++;
+            }
+            console.log(punteggio);
+            console.log(totaleRisposteSbagliate);
         });
 
     }
