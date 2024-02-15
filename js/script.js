@@ -33,15 +33,15 @@ for (let i = 0; i < pages.length; i++) {
 
 let divBenchmarkBtn = document.querySelector('.risposte') //div che contiene i button
 
+console.log(divBenchmarkBtn);
+
 //div che contiene h2 con la domanda
 
-let domanda = document.querySelector('.scritte')
+let divDomanda = document.querySelector('.scritte')
 
 let punteggio = 0
 
 let questionNumber = document.querySelector('.nDomande')
-
-
 
 
 
@@ -61,47 +61,49 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
             if (checkbox.checked) {
                 divWelcomePage.classList.add("display")
                 divBenchmarkPage.classList.remove("display")
+
             } else {
                 divCheck.innerText = "Obbligatorio!"
                 divCheck.style.marginLeft = '100px'
                 divCheck.style.color = "red"
             }
         }
-
         let datiResultsCopia = [...dati.results]
 
         console.log(datiResultsCopia);
 
-        const shuffle = (array) => {
+        function shuffle(array) {
 
             for (let i = array.length - 1; i > 0; i--) {
-
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
-
             }
-            return array
+            return array;
         }
 
-        
+
         let arrayShuffle = shuffle(dati.results)
 
         console.log(dati.results);
 
-         let domandaAttuale = 0
-         let h2 = document.querySelector('#domanda')
-         let risposteTotali;
+
+
+        let h2 = document.querySelector('#domanda')
+        let benchmarkBtn;
+
+        let domandaAttuale = 0
+    
         function mandaDomande() {
-            
-            for (let i = 0; i < arrayShuffle.length; i++) {
-    
-                let domande = arrayShuffle[domandaAttuale].question
 
-                console.log(domande);
+            let risposteTotali;
+                
+                let domanda = arrayShuffle[domandaAttuale].question
 
-                h2.innerHTML = domande
-    
-                domanda.append(h2)
+                console.log(domanda);
+
+                h2.innerHTML = domanda
+
+                divDomanda.append(h2)
 
                 let risposteSbagliate = arrayShuffle[domandaAttuale].incorrect_answers
 
@@ -112,85 +114,49 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
                 console.log(rispostaGiusta);
 
                 risposteTotali = risposteSbagliate.concat(rispostaGiusta)
-
-                
-                 // append dei bottoni con le risposte
-            }
-
-            domandaAttuale++; 
-            if (domandaAttuale >= arrayShuffle.length) {
-                domandaAttuale = 0;
-
-            }//fine
-
+            
+            domandaAttuale++;
+            
+            
             let shuffleRisposte = shuffle(risposteTotali)
+
+            console.log(shuffleRisposte);
 
             for (let i = 0; i < shuffleRisposte.length; i++) {
 
-                let benchmarkBtn = document.createElement("button")
+                benchmarkBtn = document.createElement("button")
                 benchmarkBtn.classList.add("risp")
                 benchmarkBtn.innerHTML = shuffleRisposte[i]
                 divBenchmarkBtn.append(benchmarkBtn)
+
                 console.log(benchmarkBtn);
 
-                benchmarkBtn.addEventListener('click', () => {
-                    buttonColor();
-                    mandaDomande();
+                benchmarkBtn.addEventListener('click', (event) => {
+                    buttonColor(event.target);
                 });
-                
-            }
-            
-            function buttonColor() {
 
-            allButtonBenchmark[i].style.backgroundColor = '#D20094'
+            }
+
+            
+
+            console.log(domandaAttuale);
+        }
+
+        function buttonColor(btn) {
+
+            btn.style.backgroundColor = '#D20094'
 
             setTimeout(function () {
-
+                btn.style.backgroundColor = ""
+                divBenchmarkBtn.innerHTML = ""
+                divDomanda.innerHTML = ""
                 mandaDomande();
-
-                setTimeout(function () {
-
-                    allButtonBenchmark[i].style.backgroundColor = ''; // Ripristina il colore del pulsante
-                }, 0); // Intervallo di 1 secondo per ripristinare il colore del pulsante
-            }, 800);
-
-        }
-            
-
-
-           
-            //let allButtonBenchmark = querySelectorAll(".risp")
-
-            //ARRAY BUTTON
-
-            //SELEZIONE BUTTON CASUALE
-            /*let randomButton = allButtonBenchmark[Math.floor(Math.random() * allButtonBenchmark.length)]
-
-            //SELEZIONE RISPOSTA SBAGLIATA CASUALE
-            let rispostaSbagliataRandom = risposteSbagliate[Math.floor(Math.random() * risposteSbagliate.length)]
-
-            for (let i = 0; i < allButtonBenchmark.length; i++) {
-                randomButton.innerHTML = rispostaSbagliataRandom
-
-                if (randomButton.innerHTML = rispostaSbagliataRandom) {
-                    randomButton.innerHTML = rispostaSbagliataRandom
-                }
-
-            }*/
-
-
-
-
-            /*do {
-                domandaSingola
-            } while (domandeUscite.includes(domandaSingola));
-            domandeUscite.push(domandaSingola)
-            return domandeUscite*/
-
-            
+                // Ripristina il colore del pulsante
+            }, 1000); // Intervallo di 1 secondo per ripristinare il colore del pulsante
 
 
         }
+    }
 
-    })
+    )
 
