@@ -99,11 +99,6 @@ input[type="checkbox"] {
 
 
 /*INIZIO CSS BENCHMARK PAGE*/
-#Welcome-page,
-#Feedback-page,
-#Results-page{
-display: none;
-}
 
 .scritte {
     text-align: center;
