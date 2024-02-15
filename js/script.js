@@ -41,7 +41,7 @@ let divDomanda = document.querySelector('.scritte')
 
 let punteggio = 0
 
-let questionNumber = document.querySelector('.nDomande')
+let questionNumber = document.querySelector('.nDomande p')
 
 
 
@@ -90,7 +90,6 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
         let h2 = document.querySelector('#domanda')
         let benchmarkBtn;
-
         let domandaAttuale = 0
     
         function mandaDomande() {
@@ -104,6 +103,8 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
                 h2.innerHTML = domanda
 
                 divDomanda.append(h2)
+
+                questionNumber.innerHTML = `QUESTION ${domandaAttuale+1} <span id="rosa">/10</span>`;
 
                 let risposteSbagliate = arrayShuffle[domandaAttuale].incorrect_answers
 
