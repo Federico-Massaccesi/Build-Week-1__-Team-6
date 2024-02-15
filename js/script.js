@@ -68,7 +68,7 @@ function formatTime(time) {
 }
 
 let interval;
-let timeLeft = 60;  
+let timeLeft = 60;
 
 function updateTimer(timeLeft) {
 
@@ -103,15 +103,15 @@ function updateTimer(timeLeft) {
         stopInterval();
     }
 
-    
+
     circle(timeLeft);
-    
+
 }
 
 
 /*INIZIO SCRIPT CERCHIO*/
 
-function circle(timeLeft){
+function circle(timeLeft) {
     let circleProgress = document.querySelector('.cerchio')
     const step = 100 / 60;
     circleProgress.style.background = `conic-gradient(#00FFFF ${step * timeLeft}%, transparent 0%)`
@@ -120,10 +120,10 @@ function circle(timeLeft){
 
 let domandaAttuale = 0
 let arrayShuffle;
-function stopInterval(){
+function stopInterval() {
     timer.classList.remove("low");
 
-    if(interval){
+    if (interval) {
         clearInterval(interval);
         interval = undefined;
         timeLeft = 60;
@@ -134,7 +134,7 @@ function stopInterval(){
     mandaDomande(currentQuestion);
 }
 
-function resetHtml(){
+function resetHtml() {
     divBenchmarkBtn.innerHTML = '';
     divDomanda.innerHTML = '';
 }
@@ -147,14 +147,14 @@ function mandaDomande(oggettoDomanda) {
 
 
 
-   interval = setInterval(()=>{
+    interval = setInterval(() => {
         timeLeft--;
         updateTimer(timeLeft)
     }, 1000);
     /*FINE SCRIPT TIMER*/
 
     resetHtml();
-    
+
     let risposteTotali;
 
     let domanda = oggettoDomanda.question
@@ -218,7 +218,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
             const currentQuestion = arrayShuffle[domandaAttuale]
             mandaDomande(currentQuestion);
         });
-        
+
 
 
 
