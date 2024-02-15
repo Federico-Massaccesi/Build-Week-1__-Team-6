@@ -209,8 +209,11 @@ function mandaDomande(oggettoDomanda) {
         });
 
     }
-
-
+    //PASSARE A RESULTS PAGE MA MEGLIO
+    // if (questionNumber.innerHTML == `QUESTION 10 <span id="rosa">/10</span>`) {
+    //     divBenchmarkPage.classList.add("display")
+    //     divResultsPage.classList.remove("display")
+    // }
 
     console.log(domandaAttuale);
 }
@@ -248,4 +251,22 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
     }
 
     )
-
+    //TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
+    // let circleProgress = document.querySelector('.circle'),
+    // centro = document.querySelector('.Centro');
+    
+    // let centroStartValue = punteggio
+    //     centroEndValue = totaleRisposteSbagliate
+    //     speed = 100;
+    
+    // let progress = setInterval(() => {
+    //     const step = 100 / 10;
+    //     circleProgress.style.background = `conic-gradient(#00FFFF ${step * centroStartValue}deg, #D20094 0deg)`
+    
+    //     if(centroStartValue === centroEndValue){
+    //         clearInterval(progress);
+    //     }
+    // }, speed);
+    
+    
+    
