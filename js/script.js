@@ -25,13 +25,7 @@ svgs.forEach(function(svg) {
 
 // BOTTONE
 
-let button = document.querySelector('.btnNeonFb')
 
-button.addEventListener('click', function() {
-    if (errore.style.display !== "none") {
-    feedbackRequest()
-    }
-})
 
 // MESSAGGIO DI ERRORE
 
