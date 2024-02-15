@@ -23,6 +23,10 @@ body {
     width: 20%;
 }
 
+.display{
+    display: none;
+}
+
 /*FINE CSS GENERALI*/
 
 
@@ -95,9 +99,6 @@ input[type="checkbox"] {
 #btnNeonWelcomePage{
     margin: 0 0 0 170px;
 }
-/*FINE CSS WELCOME PAGE*/
-
-
 /*INIZIO CSS BENCHMARK PAGE*/
 
 .scritte {
