@@ -89,6 +89,8 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
         console.log(dati.results);
 
          let domandaAttuale = 0
+         let h2 = document.querySelector('#domanda')
+         let risposteTotali;
         function mandaDomande() {
             
             for (let i = 0; i < arrayShuffle.length; i++) {
@@ -97,8 +99,6 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
                 console.log(domande);
 
-                let h2 = document.querySelector('#domanda')
-    
                 h2.innerHTML = domande
     
                 domanda.append(h2)
@@ -111,7 +111,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
                 console.log(rispostaGiusta);
 
-                let risposteTotali = risposteSbagliate.concat(rispostaGiusta)
+                risposteTotali = risposteSbagliate.concat(rispostaGiusta)
 
                 
                  // append dei bottoni con le risposte
@@ -123,34 +123,21 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
             }//fine
 
-            const risposteTotaliShuffle = (array) => {
-
-                for (let i = array.length - 1; i > 0; i--) {
-    
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-    
-                }
-                return array
-            }
-
-
-            let shuffleRisposte = risposteTotaliShuffle(risposteTotali)
+            let shuffleRisposte = shuffle(risposteTotali)
 
             for (let i = 0; i < shuffleRisposte.length; i++) {
+
                 let benchmarkBtn = document.createElement("button")
                 benchmarkBtn.classList.add("risp")
+                benchmarkBtn.innerHTML = shuffleRisposte[i]
+                divBenchmarkBtn.append(benchmarkBtn)
+                console.log(benchmarkBtn);
+
                 benchmarkBtn.addEventListener('click', () => {
                     buttonColor();
                     mandaDomande();
                 });
                 
-                benchmarkBtn.innerHTML = shuffleRisposte[i]
-
-                divBenchmarkBtn.append(benchmarkBtn)
-
-
-                console.log(benchmarkBtn);
             }
             
             function buttonColor() {
@@ -205,11 +192,5 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
         }
 
-        for (let i = 0; i < buttonBenchmark.length; i++) {
-
-            
-
-
-        }
     })
 
