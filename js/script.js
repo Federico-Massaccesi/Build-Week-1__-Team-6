@@ -23,21 +23,29 @@ svgs.forEach(function(svg) {
     svg.addEventListener('click', changeColor);
 });
 
-// BOTTONE
+// BOTTONE + ERRORE INPUT
+
+let button = document.querySelector('.btnNeonFb');
+let errore = document.querySelector(".errore");
 
 
-
-// MESSAGGIO DI ERRORE
-
-let errore = document.querySelector(".errore").style.display = "none";
-
-function feedbackRequest() {
+button.addEventListener('click', function() {
     let inputValue = document.querySelector(".feed").value;
-    if (inputValue === "") {
+    if (inputValue.trim('antistronzi') === "") {
         errore.style.display = "block";
     } else {
         errore.style.display = "none";
     }
-}
-// FINE FEEDBACK JS
+});
 
+// ERRORE STELLE
+
+button.addEventListener('click', function() {
+    for (let i = 0; i < svgs.length; i++) {
+        if (selectedSVG === -1) {
+            errore.style.display = "block";
+        } else {
+            errore.style.display = "none";
+        }
+    }
+});
