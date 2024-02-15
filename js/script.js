@@ -38,16 +38,4 @@ button.addEventListener('click', function() {
     }
 });
 
-// ERRORE STELLE
-
-button.addEventListener('click', function() {
-    for (let i = 0; i < svgs.length; i++) {
-        if (selectedSVG === -1) {
-            errore.style.display = "block";
-        } else {
-            errore.style.display = "none";
-        }
-    }
-});
-
 // FINE FEEDBACK JS
