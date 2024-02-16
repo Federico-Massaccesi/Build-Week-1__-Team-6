@@ -205,8 +205,9 @@ function mandaDomande(oggettoDomanda) {
         h4CampiTest.innerText = "You passed the exam."
         pCampiTest.innerText = "We'll send the certificate in few minutes. Check your email (including promotions/spam folder)"
     } else {
-        h3CampiTest.innerText = "Congratulations!"
+        h3CampiTest.innerText = "We are sorry!"
         h4CampiTest.innerText = "You failed the exam."
+        h4CampiTest.style.color = "red"
         pCampiTest.innerText = "You need to repeat the quiz again! We will contact, check your email (including promotions/spam folder)"
 
     }
