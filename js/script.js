@@ -63,8 +63,6 @@ function addClass() {
 let divBenchmarkBtn = document.querySelector('.risposte') //div che contiene i button
 let h2 = document.querySelector('#domanda')
 
-console.log(divBenchmarkBtn);
-
 //div che contiene h2 con la domanda
 
 let divDomanda = document.querySelector('.scritte')
@@ -335,7 +333,7 @@ function fetchDomande(difficulty) {
         .then(dati => {
 
             let datiResultsCopia = [...dati.results]
-            console.log(datiResultsCopia);
+
             arrayShuffle = shuffle(dati.results)
 
             mandaDomande(dati.results[0]);
