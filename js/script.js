@@ -191,6 +191,12 @@ let totaleRisposteSbagliate = 0
 let punteggio = 0
 
 function mandaDomande(oggettoDomanda) {
+    if (!oggettoDomanda) {
+        divBenchmarkPage.classList.add("display")
+        divResultsPage.classList.remove("display")
+        return 
+    }
+    
     let benchmarkBtn;
     console.log(oggettoDomanda);
     /*INIZIO SCRIPT TIMER*/
@@ -246,7 +252,7 @@ function mandaDomande(oggettoDomanda) {
 
             if (event.target.innerHTML == rispostaGiusta) {
                 punteggio += 10;
-                // updateCentroEndValue();
+                aggiornaCentroEndValue()
             } else {
                 totaleRisposteSbagliate++;
             }
@@ -256,10 +262,7 @@ function mandaDomande(oggettoDomanda) {
 
     }
     //PASSARE A RESULTS PAGE MA DA FARE MEGLIO
-    if (questionNumber.innerHTML == `QUESTION 10 <span id="rosa">/10</span>`) {
-        divBenchmarkPage.classList.add("display")
-        divResultsPage.classList.remove("display")
-    }
+    console.log(arrayShuffle.length, domandaAttuale);
 
     console.log(domandaAttuale);
 }
@@ -319,29 +322,71 @@ function fetchDomande(difficulty) {
         )
 }
 
+// INIZIO FEEDBACK JS
+
+// STELLE
+
+let svgs = document.querySelectorAll('.mySvg');
+
+function changeColor(event) {
+    let selectedSVG = event.currentTarget;
+
+    svgs.forEach(function(svg, index) {
+        let paths = svg.querySelectorAll('path');
+        paths.forEach(function(path) {
+            if (index <= Array.from(svgs).indexOf(selectedSVG)) {
+                path.setAttribute('fill', '#00FFFF');
+            } else {
+                path.setAttribute ('fill', '#384075')
+            }
+        });
+    });
+}
+
+svgs.forEach(function(svg) {
+    svg.addEventListener('click', changeColor);
+});
+
+// BOTTONE + ERRORE INPUT
+
+let buttonFB = document.querySelector('.btnNeonFb');
+let errore = document.querySelector(".errore");
+
+
+buttonFB.addEventListener('click', function() {
+    let inputValue = document.querySelector(".feed").value;
+    if (inputValue.trim('antistronzi') === "") {
+        errore.style.display = "block";
+    } else {
+        errore.style.display = "none";
+    }
+});
+
+// FINE FEEDBACK JS
 
 //TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
-// let circleProgress = document.querySelector('.circle'),
-//     centro = document.querySelector('.Centro');
+ let circleProgress = document.querySelector('.circle'),
+     centro = document.querySelector('.Centro');
 
-// let centroStartValue = 0,
-//     centroEndValueCerchio = 0,    
-//     speed = 100;
+ let centroStartValue = 0,
+     centroEndValue = 0,    
+     speed = 100;
 
-//     function updateCentroEndValue() {
-//         centroEndValueCerchio = punteggio
-//         console.log(centroEndValueCerchio);
-//     }
+     function aggiornaCentroEndValue(){
+
+        centroEndValue = punteggio
+
+     }
 
     
-// let progress = setInterval(() => {
-//     centroStartValue++;
+let progress = setInterval(() => {
+    centroStartValue++;
     
-//     circleProgress.style.background = `conic-gradient(#00FFFF ${centroStartValue * 3.6}deg, #D20094 0deg)`
-//     if (centroStartValue === centroEndValueCerchio) {
-//         clearInterval(progress);
-//     }
-// }, speed);
+    circleProgress.style.background = `conic-gradient(#00FFFF ${centroEndValue * 3.6}deg, #D20094 0deg)`
+    if (centroStartValue === centroEndValue) {
+        clearInterval(progress);
+    }
+}, speed);
 
 
 //CODICE LORENZO
