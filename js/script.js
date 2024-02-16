@@ -59,9 +59,16 @@ let questionNumber = document.querySelector('.nDomande p')
 let correct = document.querySelector('#correct')
 
 let wrong = document.querySelector('#wrong')
+
 //selezione p result page
 let pCorrect= document.querySelector('.Sinistra p')
 let pWrong= document.querySelector('.Destra p')
+
+//SELEZIONE CAMPI SUPERAMENTO TEST
+let h3CampiTest = document.querySelector(".Centro h3")
+let h4CampiTest = document.querySelector(".Centro h4")
+let pCampiTest = document.querySelector(".Centro p")
+
 
 function display() {
     if (checkbox.checked) {
@@ -132,6 +139,7 @@ function updateTimer(timeLeft) {
 
     if (timeLeft === 0) {
         stopInterval();
+        totaleRisposteSbagliate += 10;
     }
 
 
@@ -211,6 +219,16 @@ function mandaDomande(oggettoDomanda) {
         return 
     }
     
+    if (punteggio >= 60) {
+        h3CampiTest.innerText = "Congratulations!"
+        h4CampiTest.innerText = "You passed the exam."
+        pCampiTest.innerText = "We'll send the certificate in few minutes. Check your email (including promotions/spam folder)"
+    } else {
+        h3CampiTest.innerText = "Congratulations!"
+        h4CampiTest.innerText = "You failed the exam."
+        pCampiTest.innerText = "You need to repeat the quiz again! We will contact, check your email (including promotions/spam folder)"
+        
+    }
     let benchmarkBtn;
     console.log(oggettoDomanda);
     /*INIZIO SCRIPT TIMER*/
