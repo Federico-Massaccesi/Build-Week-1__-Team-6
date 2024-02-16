@@ -60,8 +60,8 @@ let correct = document.querySelector('#correct')
 let wrong = document.querySelector('#wrong')
 
 //selezione p result page
-let pCorrect= document.querySelector('.Sinistra p')
-let pWrong= document.querySelector('.Destra p')
+let pCorrect = document.querySelector('.Sinistra p')
+let pWrong = document.querySelector('.Destra p')
 
 //SELEZIONE CAMPI SUPERAMENTO TEST
 let h3CampiTest = document.querySelector(".Centro h3")
@@ -108,7 +108,6 @@ function updateTimer(timeLeft) {
     timer.classList.remove("high", "mid", "medium", "low");
 
     const scritte = document.querySelector(".inside")
-    // decreaseOpacity(scritte)
     timer.textContent = formatTime(timeLeft);
     if (timeLeft < 60) {
         timer.classList.add("high");
@@ -147,17 +146,6 @@ function updateTimer(timeLeft) {
 
 }
 
-// function decreaseOpacity(element) {
-//     let opacity = 1
-//         const decreaseInterval = setInterval(() => {
-//             opacity -= 0.1; // Decremento graduale dell'opacità
-//             element.style.opacity = opacity;
-//             if (opacity <= 0) {
-//                 clearInterval(decreaseInterval); // Fermare l'intervallo quando l'opacità raggiunge zero
-//                 element.style.opacity = 1;
-//             }
-//         }, timeLeft * 1000 / 10); // Intervallo di aggiornamento dell'opacità
-// }
 /*INIZIO SCRIPT CERCHIO*/
 
 function circle(timeLeft) {
@@ -193,9 +181,9 @@ function resetHtml() {
 
 //eventlistener Btn rate us
 
-rateUs.addEventListener('click',feedbackPage)
+rateUs.addEventListener('click', feedbackPage)
 
-function feedbackPage(){
+function feedbackPage() {
 
     divResultsPage.classList.add('display')
     divfeedbackPage.classList.remove('display')
@@ -210,8 +198,8 @@ let punteggio = 0
 function mandaDomande(oggettoDomanda) {
 
     if (fineQuiz(oggettoDomanda)) return
-    
-    
+
+
     if (punteggio >= 60) {
         h3CampiTest.innerText = "Congratulations!"
         h4CampiTest.innerText = "You passed the exam."
@@ -220,7 +208,7 @@ function mandaDomande(oggettoDomanda) {
         h3CampiTest.innerText = "Congratulations!"
         h4CampiTest.innerText = "You failed the exam."
         pCampiTest.innerText = "You need to repeat the quiz again! We will contact, check your email (including promotions/spam folder)"
-        
+
     }
     let benchmarkBtn;
 
@@ -279,19 +267,19 @@ function mandaDomande(oggettoDomanda) {
 
             aggiornaConteggio();
         });
-        
+
     }
-    
+
 }
 
-function aggiornaConteggio(){
+function aggiornaConteggio() {
     correct.innerText = `${punteggio}%`
     wrong.innerText = `${totaleRisposteSbagliate}%`
-    pWrong.innerText = totaleRisposteSbagliate/10 +'/10'
-    pCorrect.innerText = punteggio/10 +'/10'
+    pWrong.innerText = totaleRisposteSbagliate / 10 + '/10'
+    pCorrect.innerText = punteggio / 10 + '/10'
 }
 
-function fineQuiz(oggettoDomanda){
+function fineQuiz(oggettoDomanda) {
     if (!oggettoDomanda) {
         divBenchmarkPage.classList.add("display")
         divResultsPage.classList.remove("display")
@@ -332,23 +320,6 @@ function fetchDomande(difficulty) {
             arrayShuffle = shuffle(dati.results)
 
             mandaDomande(dati.results[0]);
-
-
-
-
-
-            // function buttonColor(btn) {
-
-            //     btn.style.backgroundColor = '#D20094'
-
-            //     setTimeout(function () {
-            //         btn.style.backgroundColor = ""
-            //         mandaDomande();
-            //         // Ripristina il colore del pulsante
-            //     }, 1000); // Intervallo di 1 secondo per ripristinare il colore del pulsante
-
-
-            // }
         }
 
         )
@@ -363,19 +334,19 @@ let svgs = document.querySelectorAll('.mySvg');
 function changeColor(event) {
     let selectedSVG = event.currentTarget;
 
-    svgs.forEach(function(svg, index) {
+    svgs.forEach(function (svg, index) {
         let paths = svg.querySelectorAll('path');
-        paths.forEach(function(path) {
+        paths.forEach(function (path) {
             if (index <= Array.from(svgs).indexOf(selectedSVG)) {
                 path.setAttribute('fill', '#00FFFF');
             } else {
-                path.setAttribute ('fill', '#384075')
+                path.setAttribute('fill', '#384075')
             }
         });
     });
 }
 
-svgs.forEach(function(svg) {
+svgs.forEach(function (svg) {
     svg.addEventListener('click', changeColor);
 });
 
@@ -385,7 +356,7 @@ let buttonFB = document.querySelector('.btnNeonFb');
 let errore = document.querySelector(".errore");
 
 
-buttonFB.addEventListener('click', function() {
+buttonFB.addEventListener('click', function () {
     let inputValue = document.querySelector(".feed").value;
     if (inputValue.trim('antistronzi') === "") {
         errore.style.display = "block";
@@ -397,87 +368,25 @@ buttonFB.addEventListener('click', function() {
 // FINE FEEDBACK JS
 
 //TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
- let circleProgress = document.querySelector('.circle'),
-     centro = document.querySelector('.Centro');
+let circleProgress = document.querySelector('.circle'),
+    centro = document.querySelector('.Centro');
 
- let centroStartValue = 0,
-     centroEndValue = 0,    
-     speed = 100;
+let centroStartValue = 0,
+    centroEndValue = 0,
+    speed = 100;
 
-     function aggiornaCentroEndValue(){
+function aggiornaCentroEndValue() {
 
-        centroEndValue = punteggio
+    centroEndValue = punteggio
 
-     }
+}
 
-    
+
 let progress = setInterval(() => {
     centroStartValue++;
-    
+
     circleProgress.style.background = `conic-gradient(#00FFFF ${centroEndValue * 3.6}deg, #D20094 0deg)`
     if (centroStartValue === centroEndValue) {
         clearInterval(progress);
     }
 }, speed);
-
-
-
-//CODICE LORENZO
-
-// //grazie al count poi in entrata il grafico a torta viene modificato di conseguenza
-// const donutSegment = document.querySelector(".donut-segment1");
-
-// const editPie = function () {
-//     countPoint *= 10;
-
-//     let wrongAnswer = 100 - countPoint;
-
-//     donutSegment.setAttribute(
-//         "stroke-dasharray",
-//         ${ wrongAnswer } ${ countPoint }
-//     );
-
-//     //prende la zona di sinistra corretta e la modifica in base al risultato
-//     const correctPercent = document.getElementById("correct");
-//     const correctPercent1 = document.getElementById("correct-1");
-
-//     correctPercent.innerText = countPoint + "%";
-//     correctPercent1.innerText = countPoint / 10 + "/10 questions";
-
-//     //prende la zona di destra sbagliata e la modifica in base al risultato
-
-//     const wrongPercent = document.getElementById("wrong");
-//     const wrongPercent1 = document.getElementById("wrong-1");
-//     console.log(wrongPercent1);
-
-//     wrongPercent.innerText = wrongAnswer + "%";
-//     wrongPercent1.innerText = wrongAnswer / 10 + "/10 questions";
-
-//     //per modificare pie text
-
-//     const textPie1 = document.getElementById("result-pie");
-//     console.log(textPie1.textContent);
-
-//     const textPie2 = document.getElementById("result-pie2");
-//     console.log(textPie2.textContent);
-
-//     const textPie3 = Array.from(document.querySelectorAll("#result-pie2 ~ text"));
-//     console.log(textPie3);
-
-//     if (countPoint < 60) {
-//         textPie1.textContent = "Ci dispiace!!";
-//         textPie2.textContent = "Hai fallito l'esame";
-//         textPie3.forEach(text => (text.textContent = ""));
-
-//         textPie2.setAttribute("y", 22);
-//         textPie2.setAttribute("font-size", 3);
-//         textPie2.setAttribute("fill", "red");
-//         textPie2.setAttribute("y", 22);
-//     }
-// };
-// // pulsante che manda al feedback
-
-// const rateUsBtn = document.getElementsByClassName("rate-us-button")[0];
-// rateUsBtn.onclick = function () {
-//     window.location.href = "feedback.html";
-// };
