@@ -54,6 +54,12 @@ let divDomanda = document.querySelector('.scritte')
 
 let questionNumber = document.querySelector('.nDomande p')
 
+//SELEZIONE H2 RESULTS PAGE 
+
+let correct = document.querySelector('#correct')
+
+let wrong = document.querySelector('#wrong')
+
 function display() {
     if (checkbox.checked) {
         divWelcomePage.classList.add("display")
@@ -190,10 +196,13 @@ function feedbackPage(){
 let totaleRisposteSbagliate = 0
 let punteggio = 0
 
+
 function mandaDomande(oggettoDomanda) {
     if (!oggettoDomanda) {
         divBenchmarkPage.classList.add("display")
         divResultsPage.classList.remove("display")
+        correct.innerText = `${punteggio}%`
+        wrong.innerText = `${totaleRisposteSbagliate}%`
         return 
     }
     
@@ -254,7 +263,7 @@ function mandaDomande(oggettoDomanda) {
                 punteggio += 10;
                 aggiornaCentroEndValue()
             } else {
-                totaleRisposteSbagliate++;
+                totaleRisposteSbagliate += 10;
             }
             console.log(punteggio);
             console.log(totaleRisposteSbagliate);
@@ -387,6 +396,7 @@ let progress = setInterval(() => {
         clearInterval(progress);
     }
 }, speed);
+
 
 
 //CODICE LORENZO
