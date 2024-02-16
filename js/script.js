@@ -130,7 +130,6 @@ function updateTimer(timeLeft) {
 }
 
 function decreaseOpacity(element) {
-
     let opacity = 1
         const decreaseInterval = setInterval(() => {
             opacity -= 0.1; // Decremento graduale dell'opacità
