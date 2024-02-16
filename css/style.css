@@ -85,6 +85,7 @@ ul {
     height: 12px;
     margin-right: 10px;
     align-items: center;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
