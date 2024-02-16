@@ -40,7 +40,13 @@ let rateUs = document.querySelector('#Btn')
 //SELEZIONE FAKE CHECKBOX
 let fakeCheckbox = document.querySelector("#agree_terms")
 
+//SELEZIONE LABEL
+let labelWelcome = document.querySelector("#labelWelcome")
+
+
 fakeCheckbox.addEventListener("click", addClass)
+labelWelcome.addEventListener("click", addClass)
+
 
 function addClass() {
     if (fakeCheckbox.classList.contains("click")) {
@@ -214,6 +220,7 @@ function mandaDomande(oggettoDomanda) {
     if (punteggio >= 60) {
         h3CampiTest.innerText = "Congratulations!"
         h4CampiTest.innerText = "You passed the exam."
+        h4CampiTest.style.color = "#00FFFF"
         pCampiTest.innerText = "We'll send the certificate in few minutes. Check your email (including promotions/spam folder)"
     } else {
         h3CampiTest.innerText = "We are sorry!"
