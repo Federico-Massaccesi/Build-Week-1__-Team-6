@@ -23,6 +23,10 @@ body {
     width: 20%;
 }
 
+.display{
+    display: none;
+}
+
 /*FINE CSS GENERALI*/
 
 
@@ -127,20 +131,18 @@ input[type="checkbox"] {
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
-    display: grid;
-    grid-template-columns: repeat(2, 70%);
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin-top: 2em;
 }
 
-#risp1,
-#risp3 {
+.risp{
     border: 2px solid white;
     border-radius: 100px;
-    width: 50%;
+    width: 40%;
     color: white;
     margin-top: 2em;
-    margin-left: 15em;
     background-color: #ffffff0a;
     opacity: 0.8;
     font-family: 'Outfit';
@@ -149,22 +151,6 @@ input[type="checkbox"] {
     font-size: 1rem;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
-}
-
-#risp2,
-#risp4 {
-    border: 2px solid white;
-    border-radius: 100px;
-    width: 50%;
-    box-sizing: border-box;
-    background-color: #ffffff0a;
-    margin-top: 2em;
-    margin-left: 2em;
-    color: white;
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
 }
 
 .nDomande {
