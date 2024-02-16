@@ -59,6 +59,9 @@ let questionNumber = document.querySelector('.nDomande p')
 let correct = document.querySelector('#correct')
 
 let wrong = document.querySelector('#wrong')
+//selezione p result page
+let pCorrect= document.querySelector('.Sinistra p')
+let pWrong= document.querySelector('.Destra p')
 
 function display() {
     if (checkbox.checked) {
@@ -66,7 +69,7 @@ function display() {
         divDifficultyPage.classList.remove("display")
     } else {
         divCheck.innerText = "Obbligatorio!"
-        divCheck.style.marginLeft = '100px'
+        divCheck.style.marginLeft = '6px'
         divCheck.style.color = "red"
     }
 }
@@ -203,6 +206,8 @@ function mandaDomande(oggettoDomanda) {
         divResultsPage.classList.remove("display")
         correct.innerText = `${punteggio}%`
         wrong.innerText = `${totaleRisposteSbagliate}%`
+        pWrong.innerText = totaleRisposteSbagliate/10 +'/10'
+        pCorrect.innerText = punteggio/10 +'/10'
         return 
     }
     
