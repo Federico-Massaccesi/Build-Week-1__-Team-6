@@ -179,6 +179,7 @@ input[type="checkbox"] {
     font-size: 9px;
     margin-top: 5px;
     z-index: 1;
+    transition: color 0.5s, opacity 0.5s; /* Aggiungi una transizione per il colore e l'opacità */
 }
 
 

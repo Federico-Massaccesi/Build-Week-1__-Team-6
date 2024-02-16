@@ -91,17 +91,20 @@ function updateTimer(timeLeft) {
     timer.classList.remove("high", "mid", "medium", "low");
 
     const scritte = document.querySelector(".inside")
-
+    decreaseOpacity(scritte)
     timer.textContent = formatTime(timeLeft);
     if (timeLeft < 60) {
         timer.classList.add("high");
         scritte.style.color = "rgb(3, 198, 3)"
+        
+
     };
 
     if (timeLeft < 45) {
         timer.classList.remove("high");
         timer.classList.add("mid");
         scritte.style.color = "#ffff00"
+        scritte
     };
 
     if (timeLeft < 30) {
@@ -123,9 +126,21 @@ function updateTimer(timeLeft) {
 
     circle(timeLeft);
 
+    
 }
 
+function decreaseOpacity(element) {
 
+    let opacity = 1
+        const decreaseInterval = setInterval(() => {
+            opacity -= 0.1; // Decremento graduale dell'opacità
+            element.style.opacity = opacity;
+            if (opacity <= 0) {
+                clearInterval(decreaseInterval); // Fermare l'intervallo quando l'opacità raggiunge zero
+                element.style.opacity = 1;
+            }
+        }, timeLeft * 1000 / 10); // Intervallo di aggiornamento dell'opacità
+}
 /*INIZIO SCRIPT CERCHIO*/
 
 function circle(timeLeft) {
