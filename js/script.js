@@ -32,13 +32,25 @@ let divResultsPage = document.querySelector("#Results-page")
 //SELEZIONE FEEDBACK PAGE
 let divfeedbackPage = document.querySelector("#Feedback-page")
 
-//SELEZIONE CHECKBOX
-let checkbox = document.querySelector('#agree_terms')
-
 //SELEZIONE DIV CHECKBOX
 let divCheck = document.querySelector('#div-check')
 
 let rateUs = document.querySelector('#Btn')
+
+//SELEZIONE FAKE CHECKBOX
+let fakeCheckbox = document.querySelector("#agree_terms")
+
+fakeCheckbox.addEventListener("click", addClass)
+
+function addClass() {
+    if (fakeCheckbox.classList.contains("click")) {
+        fakeCheckbox.classList.remove("click")
+        fakeCheckbox.innerText = ""
+    }else{
+    fakeCheckbox.classList.add("click")
+    fakeCheckbox.innerText = "✔"
+}
+}
 
 //BENCHMARK PAGE
 
@@ -70,12 +82,11 @@ let pCampiTest = document.querySelector(".Centro p")
 
 
 function display() {
-    if (checkbox.checked) {
+    if (fakeCheckbox.classList.contains("click")) {
         divWelcomePage.classList.add("display")
         divDifficultyPage.classList.remove("display")
     } else {
         divCheck.innerText = "Obbligatorio!"
-        divCheck.style.marginLeft = '6px'
         divCheck.style.color = "red"
     }
 }
