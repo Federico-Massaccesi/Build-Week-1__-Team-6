@@ -262,6 +262,8 @@ input[type="checkbox"] {
 }
 /*FINE CSS DIFFICULTY PAGE*/
 
+/* INIZIO RESULT PAGE */
+
 #Title {
     color: white;
     text-align: center;
@@ -309,8 +311,8 @@ input[type="checkbox"] {
 }
 
 .circle {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     background: conic-gradient(#00FFFF 3.6deg, #D20094 0deg);
     border-radius: 50%;
     overflow: hidden;
@@ -323,8 +325,8 @@ input[type="checkbox"] {
 .circle::before{
     content: "";
     position: absolute;
-    height: 320px;
-    width: 320px;
+    height: 270px;
+    width: 270px;
     border-radius: 50%;
     background-color: #0B113C;
 }
@@ -351,7 +353,7 @@ input[type="checkbox"] {
 #Btn {
     margin: 0 auto;
     display: block;
-    padding: 30px;
+    padding: 15px;
     width: 15%;
     color: white;
     font-size: 25px;

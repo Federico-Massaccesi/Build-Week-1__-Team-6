@@ -188,6 +188,7 @@ function mandaDomande(oggettoDomanda) {
     }, 1000);
     /*FINE SCRIPT TIMER*/
 
+
     resetHtml();
 
     let risposteTotali;
