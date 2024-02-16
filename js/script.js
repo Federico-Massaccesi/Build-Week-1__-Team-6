@@ -226,7 +226,7 @@ function mandaDomande(oggettoDomanda) {
         });
 
     }
-    //PASSARE A RESULTS PAGE MA MEGLIO
+    //PASSARE A RESULTS PAGE MA DA FARE FORSE MEGLIO
     if (questionNumber.innerHTML == `QUESTION 10 <span id="rosa">/10</span>`) {
         divBenchmarkPage.classList.add("display")
         divResultsPage.classList.remove("display")
