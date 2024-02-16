@@ -91,7 +91,7 @@ function updateTimer(timeLeft) {
     timer.classList.remove("high", "mid", "medium", "low");
 
     const scritte = document.querySelector(".inside")
-    decreaseOpacity(scritte)
+    // decreaseOpacity(scritte)
     timer.textContent = formatTime(timeLeft);
     if (timeLeft < 60) {
         timer.classList.add("high");
@@ -129,17 +129,17 @@ function updateTimer(timeLeft) {
     
 }
 
-function decreaseOpacity(element) {
-    let opacity = 1
-        const decreaseInterval = setInterval(() => {
-            opacity -= 0.1; // Decremento graduale dell'opacità
-            element.style.opacity = opacity;
-            if (opacity <= 0) {
-                clearInterval(decreaseInterval); // Fermare l'intervallo quando l'opacità raggiunge zero
-                element.style.opacity = 1;
-            }
-        }, timeLeft * 1000 / 10); // Intervallo di aggiornamento dell'opacità
-}
+// function decreaseOpacity(element) {
+//     let opacity = 1
+//         const decreaseInterval = setInterval(() => {
+//             opacity -= 0.1; // Decremento graduale dell'opacità
+//             element.style.opacity = opacity;
+//             if (opacity <= 0) {
+//                 clearInterval(decreaseInterval); // Fermare l'intervallo quando l'opacità raggiunge zero
+//                 element.style.opacity = 1;
+//             }
+//         }, timeLeft * 1000 / 10); // Intervallo di aggiornamento dell'opacità
+// }
 /*INIZIO SCRIPT CERCHIO*/
 
 function circle(timeLeft) {
@@ -240,7 +240,7 @@ function mandaDomande(oggettoDomanda) {
         });
 
     }
-    //PASSARE A RESULTS PAGE MA DA FARE FORSE MEGLIO
+    //PASSARE A RESULTS PAGE MA DA FARE MEGLIO
     if (questionNumber.innerHTML == `QUESTION 10 <span id="rosa">/10</span>`) {
         divBenchmarkPage.classList.add("display")
         divResultsPage.classList.remove("display")
