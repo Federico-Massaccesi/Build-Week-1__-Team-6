@@ -39,6 +39,7 @@ let checkbox = document.querySelector('#agree_terms')
 //SELEZIONE DIV CHECKBOX
 let divCheck = document.querySelector('#div-check')
 
+let rateUs = document.querySelector('#Btn')
 
 //BENCHMARK PAGE
 
@@ -174,6 +175,17 @@ function resetHtml() {
 
 /*FINE SCRIPT CERCHIO*/
 
+//eventlistener Btn rate us 
+
+rateUs.addEventListener('click',feedbackPage)
+
+function feedbackPage(){
+
+    divResultsPage.classList.add('display')
+    divfeedbackPage.classList.remove('display')
+
+
+}
 
 let totaleRisposteSbagliate = 0
 let punteggio = 0

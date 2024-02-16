@@ -267,7 +267,7 @@ input[type="checkbox"] {
 #Title {
     color: white;
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
 
 }
 
@@ -341,7 +341,7 @@ input[type="checkbox"] {
 .Sinistra,
 .Destra {
     color: white;
-    font-size: 70px;
+    font-size: 60px;
     padding: 80px;
 }
 
@@ -353,7 +353,7 @@ input[type="checkbox"] {
 #Btn {
     margin: 0 auto;
     display: block;
-    padding: 15px;
+    padding: 12px;
     width: 15%;
     color: white;
     font-size: 25px;
