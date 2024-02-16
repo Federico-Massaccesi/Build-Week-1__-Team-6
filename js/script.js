@@ -1,9 +1,28 @@
+//SELEZIONE DIV DIFFICULTY BUTTON
+let divDifficultyBtn = document.querySelector("#div_difficulty_btn")
+
+//SELEZIONE DIFFICULTY BUTTON
+
+let difficolta = ""
+let easyBtn = document.querySelector("#easy_Btn")
+let mediumBtn = document.querySelector("#medium_Btn")
+let hardBtn = document.querySelector("#hard_Btn")
+
+easyBtn.addEventListener("click", domandeEasy)
+
+mediumBtn.addEventListener("click", domandeMedium)
+
+hardBtn.addEventListener("click", domandeHard)
+
+
 //SELEZIONE BUTTON WELCOME PAGE
 let button = document.querySelector("#btnNeonWelcomePage")
 
 //SELEZIONE WELCOME PAGE
 let divWelcomePage = document.querySelector("#Welcome-page")
 
+//SELEZIONE DIFFICULTY PAGE
+let divDifficultyPage = document.querySelector("#Difficulty-page")
 //SELEZIONE BENCHMARK PAGE
 let divBenchmarkPage = document.querySelector("#Benchmark-page")
 
@@ -36,7 +55,7 @@ let questionNumber = document.querySelector('.nDomande p')
 function display() {
     if (checkbox.checked) {
         divWelcomePage.classList.add("display")
-        divBenchmarkPage.classList.remove("display")
+        divDifficultyPage.classList.remove("display")
     } else {
         divCheck.innerText = "Obbligatorio!"
         divCheck.style.marginLeft = '100px'
@@ -146,10 +165,8 @@ let punteggio = 0
 
 function mandaDomande(oggettoDomanda) {
     let benchmarkBtn;
+    console.log(oggettoDomanda);
     /*INIZIO SCRIPT TIMER*/
-
-
-
     interval = setInterval(() => {
         timeLeft--;
         updateTimer(timeLeft)
@@ -161,7 +178,7 @@ function mandaDomande(oggettoDomanda) {
     let risposteTotali;
 
     let domanda = oggettoDomanda.question
-
+    
     console.log(domanda);
 
     h2.innerHTML = domanda
@@ -210,28 +227,48 @@ function mandaDomande(oggettoDomanda) {
 
     }
     //PASSARE A RESULTS PAGE MA MEGLIO
-    // if (questionNumber.innerHTML == `QUESTION 10 <span id="rosa">/10</span>`) {
-    //     divBenchmarkPage.classList.add("display")
-    //     divResultsPage.classList.remove("display")
-    // }
+    if (questionNumber.innerHTML == `QUESTION 10 <span id="rosa">/10</span>`) {
+        divBenchmarkPage.classList.add("display")
+        divResultsPage.classList.remove("display")
+    }
 
     console.log(domandaAttuale);
 }
 
-fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
+
+function domandeEasy() {
+    difficolta = "easy"
+    fetchDomande("easy");
+}
+
+function domandeMedium() {
+    difficolta = "medium"
+    fetchDomande("medium");
+}
+
+function domandeHard() {
+    difficolta = "hard"
+    fetchDomande("hard");
+}
+
+button.addEventListener('click', () => {
+    display();
+    const currentQuestion = arrayShuffle[domandaAttuale]
+    mandaDomande(currentQuestion);
+});
+function fetchDomande(difficulty) {
+    divDifficultyPage.classList.add("display")
+    divBenchmarkPage.classList.remove("display")
+fetch(`https://opentdb.com/api.php?amount=10&category=18&difficulty=${difficolta}`)
     .then(response => response.json())
     .then(dati => {
+        
         let datiResultsCopia = [...dati.results]
         console.log(datiResultsCopia);
-
         arrayShuffle = shuffle(dati.results)
-        console.log(dati.results);
 
-        button.addEventListener('click', () => {
-            display();
-            const currentQuestion = arrayShuffle[domandaAttuale]
-            mandaDomande(currentQuestion);
-        });
+        mandaDomande(dati.results[0]);
+        
 
 
 
@@ -249,8 +286,8 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy')
 
         }
     }
-
-    )
+    
+    )}
     //TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
     // let circleProgress = document.querySelector('.circle'),
     // centro = document.querySelector('.Centro');
