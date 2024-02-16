@@ -96,7 +96,7 @@ function updateTimer(timeLeft) {
     if (timeLeft < 60) {
         timer.classList.add("high");
         scritte.style.color = "rgb(3, 198, 3)"
-        
+
 
     };
 
@@ -126,7 +126,7 @@ function updateTimer(timeLeft) {
 
     circle(timeLeft);
 
-    
+
 }
 
 // function decreaseOpacity(element) {
@@ -192,7 +192,7 @@ function mandaDomande(oggettoDomanda) {
     let risposteTotali;
 
     let domanda = oggettoDomanda.question
-    
+
     console.log(domanda);
 
     h2.innerHTML = domanda
@@ -230,7 +230,7 @@ function mandaDomande(oggettoDomanda) {
             //buttonColor(event.target);
             stopInterval();
 
-            if (event.innerText == rispostaGiusta) {
+            if (event.target.innerHTML == rispostaGiusta) {
                 punteggio++;
             } else {
                 totaleRisposteSbagliate++;
@@ -273,51 +273,115 @@ button.addEventListener('click', () => {
 function fetchDomande(difficulty) {
     divDifficultyPage.classList.add("display")
     divBenchmarkPage.classList.remove("display")
-fetch(`https://opentdb.com/api.php?amount=10&category=18&difficulty=${difficolta}`)
-    .then(response => response.json())
-    .then(dati => {
-        
-        let datiResultsCopia = [...dati.results]
-        console.log(datiResultsCopia);
-        arrayShuffle = shuffle(dati.results)
+    fetch(`https://opentdb.com/api.php?amount=10&category=18&difficulty=${difficolta}`)
+        .then(response => response.json())
+        .then(dati => {
 
-        mandaDomande(dati.results[0]);
-        
+            let datiResultsCopia = [...dati.results]
+            console.log(datiResultsCopia);
+            arrayShuffle = shuffle(dati.results)
 
+            mandaDomande(dati.results[0]);
 
 
 
-        function buttonColor(btn) {
-
-            btn.style.backgroundColor = '#D20094'
-
-            setTimeout(function () {
-                btn.style.backgroundColor = ""
-                mandaDomande();
-                // Ripristina il colore del pulsante
-            }, 1000); // Intervallo di 1 secondo per ripristinare il colore del pulsante
 
 
+            // function buttonColor(btn) {
+
+            //     btn.style.backgroundColor = '#D20094'
+
+            //     setTimeout(function () {
+            //         btn.style.backgroundColor = ""
+            //         mandaDomande();
+            //         // Ripristina il colore del pulsante
+            //     }, 1000); // Intervallo di 1 secondo per ripristinare il colore del pulsante
+
+
+            // }
         }
+
+        )
+}
+
+
+//TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
+let circleProgress = document.querySelector('.circle'),
+    centro = document.querySelector('.Centro');
+
+let centroStartValue = 0,
+    centroEndValue = punteggio * 10,
+    speed = 100;
+
+let progress = setInterval(() => {
+    centroStartValue++;
+
+    circleProgress.style.background = `conic-gradient(#00FFFF ${centroStartValue * 3.6}deg, #D20094 0deg)`
+
+    if (centroStartValue === centroEndValue) {
+        clearInterval(progress);
     }
-    
-    )}
-    //TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
-    // let circleProgress = document.querySelector('.circle'),
-    // centro = document.querySelector('.Centro');
-    
-    // let centroStartValue = punteggio
-    //     centroEndValue = totaleRisposteSbagliate
-    //     speed = 100;
-    
-    // let progress = setInterval(() => {
-    //     const step = 100 / 10;
-    //     circleProgress.style.background = `conic-gradient(#00FFFF ${step * centroStartValue}deg, #D20094 0deg)`
-    
-    //     if(centroStartValue === centroEndValue){
-    //         clearInterval(progress);
-    //     }
-    // }, speed);
-    
-    
-    
+}, speed);
+
+
+//CODICE LORENZO
+
+// //grazie al count poi in entrata il grafico a torta viene modificato di conseguenza
+// const donutSegment = document.querySelector(".donut-segment1");
+
+// const editPie = function () {
+//     countPoint *= 10;
+
+//     let wrongAnswer = 100 - countPoint;
+
+//     donutSegment.setAttribute(
+//         "stroke-dasharray",
+//         ${ wrongAnswer } ${ countPoint }
+//     );
+
+//     //prende la zona di sinistra corretta e la modifica in base al risultato
+//     const correctPercent = document.getElementById("correct");
+//     const correctPercent1 = document.getElementById("correct-1");
+
+//     correctPercent.innerText = countPoint + "%";
+//     correctPercent1.innerText = countPoint / 10 + "/10 questions";
+
+//     //prende la zona di destra sbagliata e la modifica in base al risultato
+
+//     const wrongPercent = document.getElementById("wrong");
+//     const wrongPercent1 = document.getElementById("wrong-1");
+//     console.log(wrongPercent1);
+
+//     wrongPercent.innerText = wrongAnswer + "%";
+//     wrongPercent1.innerText = wrongAnswer / 10 + "/10 questions";
+
+//     //per modificare pie text
+
+//     const textPie1 = document.getElementById("result-pie");
+//     console.log(textPie1.textContent);
+
+//     const textPie2 = document.getElementById("result-pie2");
+//     console.log(textPie2.textContent);
+
+//     const textPie3 = Array.from(document.querySelectorAll("#result-pie2 ~ text"));
+//     console.log(textPie3);
+
+//     if (countPoint < 60) {
+//         textPie1.textContent = "Ci dispiace!!";
+//         textPie2.textContent = "Hai fallito l'esame";
+//         textPie3.forEach(text => (text.textContent = ""));
+
+//         textPie2.setAttribute("y", 22);
+//         textPie2.setAttribute("font-size", 3);
+//         textPie2.setAttribute("fill", "red");
+//         textPie2.setAttribute("y", 22);
+//     }
+// };
+// // pulsante che manda al feedback
+
+// const rateUsBtn = document.getElementsByClassName("rate-us-button")[0];
+// rateUsBtn.onclick = function () {
+//     window.location.href = "feedback.html";
+// };
+
+
