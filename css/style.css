@@ -1,55 +1,60 @@
-
-/*INIZIO CSS WELCOME PAGE*/
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap');
 
-body{
+/*INIZIO CSS GENERALI*/
+
+body {
     background-image: url(../assets/img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-   
     font-family: 'Outfit', sans-serif;
     color: white;
 }
 
-
-
-
-#main{
-    width: 1200px;
-    height: 700px;
+#main {
+    width: 1000px;
+    padding: 50px 100px;
     box-sizing: border-box;
-    margin: 0 auto ;
+    margin: 0 auto;
 }
 
 
-#header img{
-    width: 13%;
-    margin: 50px 0 25px 0px;
+
+#header img {
+    width: 20%;
 }
 
+.display{
+    display: none;
+}
 
-#welcomeContainer{
+/*FINE CSS GENERALI*/
+
+
+/*INIZIO CSS WELCOME PAGE*/
+
+#welcomeContainer {
     color: #FFF;
 }
 
-#welcomeContainer .bold{
+#welcomeContainer .bold {
     font-weight: 700;
 }
 
-#welcomeContainer h2{
-    margin: 60px 0 30px 0;
-    font-size: 3rem;
-    line-height: 2.5rem;
+#welcomeContainer h2 {
+    margin: 65px 0 25px 0;
+    font-size: 4rem;
+    line-height: 3rem;
 }
 
 #welcomeContainer h3 {
     color: #C2148E;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-#welcomeContainer p, #welcomeContainer ul{
+#welcomeContainer p,
+ul {
     font-size: 1rem;
     font-weight: 100;
     margin-bottom: 40px;
@@ -66,15 +71,17 @@ body{
     font-weight: 400;
     display: flex;
     align-items: center;
+    margin-top: 50px;
 }
 
-#agree_terms{
-    width: 30px;
+#agree_terms {
+    width: 20px;
     height: 15px;
-    border: 1px solid #FFF;
-    background-color: #0B113C;
 }
 
+input[type="checkbox"] {
+    cursor: pointer;
+}
 
 .btnNeon {
     font-size: 1rem;
@@ -82,98 +89,71 @@ body{
     padding: 15px 50px;
     background-color: #00FFFF;
     border: none;
-    box-shadow: 0px 0px 25px 2px rgba(0,255,255,0.9);;
-    margin-left: auto;
+    box-shadow: 0px 0px 25px 2px rgba(0, 255, 255, 0.9);
 }
 
+#btnNeonWelcomePage {
+    margin: 0 0 0 170px;
+}
+
+#btnNeonWelcomePage{
+    margin: 0 0 0 170px;
+}
 /*FINE CSS WELCOME PAGE*/
 
 
 /*INIZIO CSS BENCHMARK PAGE*/
 
-
-.scritte{
+.scritte {
     text-align: center;
     color: rgb(255, 255, 255);
-    margin-top: 3em;
+    margin-top: 7em;
 }
 
-.scritte h2{
+.scritte h2 {
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
-.scritte h3{
+#grassetto {
     font-family: 'Outfit';
     font-style: bold;
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
-.risposte{
+.risposte {
     text-align: center;
-    margin: 2em;
     color: white;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
-    display: grid;
-    grid-template-columns: repeat(2, 70%);
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2em;
 }
 
-
-#risp1{
+.risp{
     border: 2px solid white;
-    padding: 4em 2em;
-    border-radius: 50px;
-    width: 50%;
-    box-sizing: border-box;
+    border-radius: 100px;
+    width: 40%;
+    color: white;
     margin-top: 2em;
-    margin-left: 25em;
     background-color: #ffffff0a;
     opacity: 0.8;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
 }
 
-#risp2{
-    border: 2px solid white;
-    padding: 4em 2em;
-    border-radius: 50px;
-    width: 50%;
-    box-sizing: border-box;
-    background-color: #a01282;
-    margin-top: 2em;
-    margin-left: 2em;
-}
-
-#risp3{
-    border: 2px solid white;
-    padding: 4em 2em;
-    border-radius: 50px;
-    width: 50%;
-    box-sizing: border-box;
-    margin-top: 2em;
-    margin-left: 25em;
-    background-color: #ffffff0a;
-    opacity: 0.8;
-}
-
-#risp4{
-    border: 2px solid white;
-    padding: 4em 2em;
-    border-radius: 50px;
-    width: 50%;
-    box-sizing: border-box;
-    margin-top: 2em;
-    margin-left: 2em;
-    background-color: #ffffff0a;
-    opacity: 0.8;
-}
-
-.nDomande{
+.nDomande {
     text-align: center;
     font-family: 'Outfit';
     font-style: normal;
@@ -182,24 +162,56 @@ body{
     margin-top: 3em;
 }
 
-#rosa{
+#rosa {
     color: #a01282;
+}
+
+.inside h4 {
+    font-weight: normal;
+}
+
+.inside h3 {
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.inside {
+    color: white;
+    text-align: center;
+    font-size: 8px;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.cerchio {
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    border-radius: 50%;
+    border: 15px solid #00FFFF;
+    overflow: hidden;
+}
+
+.grandeCerchio {
+    position: absolute;
+    right: 250px;
+    top: 60px;
+}
+
+.rispSelezionata {
+    background-color: #a01282;
 }
 
 /*FINE CSS BENCHMARK PAGE*/
 
+
 /*INIZIO CSS RESULTS PAGE*/
-
-#Welcome-page, #Feedback-page, #Benchmark-page{
-    display: none;
-}
-
 
 #Title {
     color: white;
     text-align: center;
     font-size: 3em;
-
+    
 }
 
 .bold {
@@ -242,24 +254,13 @@ body{
 }
 
 .circle {
-    width: 450px;
-    height: 450px;
-    background: conic-gradient(#00FFFF 3.6deg, #D20094 0deg);
+    width: 350px;
+    height: 350px;
+    background: transparent;
     border-radius: 50%;
+    border: 70px solid #00FFFF;
     overflow: hidden;
-    box-shadow: 0 0 40px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle::before{
-    content: "";
-    position: absolute;
-    height: 320px;
-    width: 320px;
-    border-radius: 50%;
-    background-color: #0B113C;
+    box-shadow: 0px 0px 30px 10px black;
 }
 
 .Centro p {
@@ -273,7 +274,7 @@ body{
 .Destra {
     color: white;
     font-size: 70px;
-    padding: 80px;
+    padding: 40px;
 }
 
 .Sinistra p,
@@ -284,41 +285,38 @@ body{
 #Btn {
     margin: 0 auto;
     display: block;
-    padding: 30px;
+    padding: 20px;
     width: 15%;
     color: white;
-    font-size: 25px;
+    font-size: 16px;
     cursor: pointer;
     border: 1px solid white;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0 0 30px #7303af;
+    box-shadow: 0 0 30px #430465;
 }
 
+/*FINE CSS RESULTS PAGE*/
 
-#Btn:hover{
-    background-color: #900080;
-}
+/* INIZIO FEEDBACK PAGE */
 
-
-
-/* FINE RESULT PAGE */
-
-
-#feedbackPage {
+#Feedback-page {
     text-align: center;
     margin-top: 150px;
 }
 
-#intestazione {
+#intestazioni {
+    margin-bottom: 50px;
+}
+
+#titolo {
     font-weight: 700;
     font-size: 3.5rem;
     margin-bottom: 25px;
 }
 
 .testi {
-    margin-bottom: 50px;
     font-size: 2rem;
     font-weight: 400;
 }
@@ -328,30 +326,24 @@ body{
     margin: 10px;
 }
 
-.stelle{
+.stelle {
     margin-bottom: 90px;
 }
 
 .feed {
-    padding-left: 22px;
+    margin-top: 50px;
+    padding-left: 45px;
     padding-bottom: 10px;
-    width: 48%;
+    width: 70%;
     background-color: transparent;
     border: none;
-    border-bottom: solid 1px #941279 ;
+    border-bottom: solid 1px #941279;
     font-size: 1.2rem;
 }
 
-.btnNeon {
+#btnNeonFeedbackPage {
     font-family: 'Outfit', sans-serif;
-    font-weight: 800;
-    font-size: 1rem;
-    padding: 15px 50px;
     margin-top: 80px;
-    background-color: #00FFFF;
-    box-shadow: 0px 0px 25px 2px rgba(0,255,255,0.9);
-    border: none;
 }
 
 /* FINE FEEDBACK PAGE */
-
