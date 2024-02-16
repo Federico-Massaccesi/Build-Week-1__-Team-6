@@ -1,4 +1,3 @@
-// let centroEndValue;
 //SELEZIONE DIV DIFFICULTY BUTTON
 let divDifficultyBtn = document.querySelector("#div_difficulty_btn")
 
@@ -209,15 +208,9 @@ let punteggio = 0
 
 
 function mandaDomande(oggettoDomanda) {
-    if (!oggettoDomanda) {
-        divBenchmarkPage.classList.add("display")
-        divResultsPage.classList.remove("display")
-        correct.innerText = `${punteggio}%`
-        wrong.innerText = `${totaleRisposteSbagliate}%`
-        pWrong.innerText = totaleRisposteSbagliate/10 +'/10'
-        pCorrect.innerText = punteggio/10 +'/10'
-        return 
-    }
+
+    if (fineQuiz(oggettoDomanda)) return
+    
     
     if (punteggio >= 60) {
         h3CampiTest.innerText = "Congratulations!"
@@ -230,7 +223,7 @@ function mandaDomande(oggettoDomanda) {
         
     }
     let benchmarkBtn;
-    console.log(oggettoDomanda);
+
     /*INIZIO SCRIPT TIMER*/
     interval = setInterval(() => {
         timeLeft--;
@@ -245,7 +238,6 @@ function mandaDomande(oggettoDomanda) {
 
     let domanda = oggettoDomanda.question
 
-    console.log(domanda);
 
     h2.innerHTML = domanda
 
@@ -255,11 +247,9 @@ function mandaDomande(oggettoDomanda) {
 
     let risposteSbagliate = oggettoDomanda.incorrect_answers
 
-    console.log(risposteSbagliate);
 
     let rispostaGiusta = oggettoDomanda.correct_answer
 
-    console.log(rispostaGiusta);
 
     risposteTotali = risposteSbagliate.concat(rispostaGiusta)
 
@@ -267,7 +257,6 @@ function mandaDomande(oggettoDomanda) {
 
     let shuffleRisposte = shuffle(risposteTotali)
 
-    console.log(shuffleRisposte);
 
     for (let i = 0; i < shuffleRisposte.length; i++) {
 
@@ -276,7 +265,6 @@ function mandaDomande(oggettoDomanda) {
         benchmarkBtn.innerHTML = shuffleRisposte[i]
         divBenchmarkBtn.append(benchmarkBtn)
 
-        console.log(benchmarkBtn);
 
         benchmarkBtn.addEventListener('click', (event) => {
             //buttonColor(event.target);
@@ -288,17 +276,29 @@ function mandaDomande(oggettoDomanda) {
             } else {
                 totaleRisposteSbagliate += 10;
             }
-            console.log(punteggio);
-            console.log(totaleRisposteSbagliate);
+
+            aggiornaConteggio();
         });
-
+        
     }
-    //PASSARE A RESULTS PAGE MA DA FARE MEGLIO
-    console.log(arrayShuffle.length, domandaAttuale);
-
-    console.log(domandaAttuale);
+    
 }
 
+function aggiornaConteggio(){
+    correct.innerText = `${punteggio}%`
+    wrong.innerText = `${totaleRisposteSbagliate}%`
+    pWrong.innerText = totaleRisposteSbagliate/10 +'/10'
+    pCorrect.innerText = punteggio/10 +'/10'
+}
+
+function fineQuiz(oggettoDomanda){
+    if (!oggettoDomanda) {
+        divBenchmarkPage.classList.add("display")
+        divResultsPage.classList.remove("display")
+        return true
+    }
+    return false;
+}
 
 function domandeEasy() {
     difficolta = "easy"

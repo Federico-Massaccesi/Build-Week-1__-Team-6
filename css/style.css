@@ -105,6 +105,7 @@ input[type="checkbox"] {
 .btnNeon:hover {
     box-shadow: 0px 0px 25px 2px rgba(0,255,255,0.9);
 }
+
 /*INIZIO CSS BENCHMARK PAGE*/
 
 .scritte {
@@ -385,15 +386,13 @@ input[type="checkbox"] {
     background-color: #900080;
 }
 
-
-
 /* FINE RESULT PAGE */
 
 /* INIZIO FEEDBACK PAGE */
 
 #Feedback-page {
     text-align: center;
-    margin-top: 150px;
+    margin-top: 18px;
 }
 
 #intestazioni {
@@ -407,7 +406,7 @@ input[type="checkbox"] {
 }
 
 .testi {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
@@ -448,11 +447,7 @@ input[type="checkbox"] {
 
 
 #btnNeonFeedback{
-    
-    margin-top: 80px;
-    
+    margin-top: 60px;
 }
-
-
 
 /* FINE FEEDBACK PAGE */
