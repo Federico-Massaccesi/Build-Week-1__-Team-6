@@ -310,7 +310,7 @@ let circleProgress = document.querySelector('.circle'),
     centro = document.querySelector('.Centro');
 
 let centroStartValue = 0,
-    centroEndValue = punteggio * 10,
+    centroEndValue = 10,
     speed = 100;
 
 let progress = setInterval(() => {
