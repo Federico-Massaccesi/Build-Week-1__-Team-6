@@ -175,7 +175,7 @@ function resetHtml() {
 
 /*FINE SCRIPT CERCHIO*/
 
-//eventlistener Btn rate us 
+//eventlistener Btn rate us
 
 rateUs.addEventListener('click',feedbackPage)
 
@@ -319,8 +319,49 @@ function fetchDomande(difficulty) {
         )
 }
 
+// INIZIO FEEDBACK JS
 
-//TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
+// STELLE
+
+let svgs = document.querySelectorAll('.mySvg');
+
+function changeColor(event) {
+    let selectedSVG = event.currentTarget;
+
+    svgs.forEach(function(svg, index) {
+        let paths = svg.querySelectorAll('path');
+        paths.forEach(function(path) {
+            if (index <= Array.from(svgs).indexOf(selectedSVG)) {
+                path.setAttribute('fill', '#00FFFF');
+            } else {
+                path.setAttribute ('fill', '#384075')
+            }
+        });
+    });
+}
+
+svgs.forEach(function(svg) {
+    svg.addEventListener('click', changeColor);
+});
+
+// BOTTONE + ERRORE INPUT
+
+let buttonFB = document.querySelector('.btnNeonFb');
+let errore = document.querySelector(".errore");
+
+
+buttonFB.addEventListener('click', function() {
+    let inputValue = document.querySelector(".feed").value;
+    if (inputValue.trim('antistronzi') === "") {
+        errore.style.display = "block";
+    } else {
+        errore.style.display = "none";
+    }
+});
+
+// FINE FEEDBACK JS
+
+//TENTATIVO CIRCLE PROGRESS CON LE VARIABILI
 // let circleProgress = document.querySelector('.circle'),
 //     centro = document.querySelector('.Centro');
 
@@ -333,10 +374,10 @@ function fetchDomande(difficulty) {
 //         console.log(centroEndValueCerchio);
 //     }
 
-    
+
 // let progress = setInterval(() => {
 //     centroStartValue++;
-    
+
 //     circleProgress.style.background = `conic-gradient(#00FFFF ${centroStartValue * 3.6}deg, #D20094 0deg)`
 //     if (centroStartValue === centroEndValueCerchio) {
 //         clearInterval(progress);
@@ -403,5 +444,3 @@ function fetchDomande(difficulty) {
 // rateUsBtn.onclick = function () {
 //     window.location.href = "feedback.html";
 // };
-
-
