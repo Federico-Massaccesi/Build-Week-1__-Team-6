@@ -1,3 +1,4 @@
+// let centroEndValue;
 //SELEZIONE DIV DIFFICULTY BUTTON
 let divDifficultyBtn = document.querySelector("#div_difficulty_btn")
 
@@ -231,7 +232,8 @@ function mandaDomande(oggettoDomanda) {
             stopInterval();
 
             if (event.target.innerHTML == rispostaGiusta) {
-                punteggio++;
+                punteggio += 10;
+                // updateCentroEndValue();
             } else {
                 totaleRisposteSbagliate++;
             }
@@ -306,22 +308,27 @@ function fetchDomande(difficulty) {
 
 
 //TENTATIVO CIRCLE PROGRESS CON LE VARIABILI 
-let circleProgress = document.querySelector('.circle'),
-    centro = document.querySelector('.Centro');
+// let circleProgress = document.querySelector('.circle'),
+//     centro = document.querySelector('.Centro');
 
-let centroStartValue = 0,
-    centroEndValue = 10,
-    speed = 100;
+// let centroStartValue = 0,
+//     centroEndValueCerchio = 0,    
+//     speed = 100;
 
-let progress = setInterval(() => {
-    centroStartValue++;
+//     function updateCentroEndValue() {
+//         centroEndValueCerchio = punteggio
+//         console.log(centroEndValueCerchio);
+//     }
 
-    circleProgress.style.background = `conic-gradient(#00FFFF ${centroStartValue * 3.6}deg, #D20094 0deg)`
-
-    if (centroStartValue === centroEndValue) {
-        clearInterval(progress);
-    }
-}, speed);
+    
+// let progress = setInterval(() => {
+//     centroStartValue++;
+    
+//     circleProgress.style.background = `conic-gradient(#00FFFF ${centroStartValue * 3.6}deg, #D20094 0deg)`
+//     if (centroStartValue === centroEndValueCerchio) {
+//         clearInterval(progress);
+//     }
+// }, speed);
 
 
 //CODICE LORENZO

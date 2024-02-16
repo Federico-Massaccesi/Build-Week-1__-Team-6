@@ -261,13 +261,12 @@ input[type="checkbox"] {
     
 }
 /*FINE CSS DIFFICULTY PAGE*/
-/*INIZIO CSS RESULTS PAGE*/
 
 #Title {
     color: white;
     text-align: center;
     font-size: 3em;
-    
+
 }
 
 .bold {
@@ -310,13 +309,24 @@ input[type="checkbox"] {
 }
 
 .circle {
-    width: 350px;
-    height: 350px;
-    background: transparent;
+    width: 450px;
+    height: 450px;
+    background: conic-gradient(#00FFFF 3.6deg, #D20094 0deg);
     border-radius: 50%;
-    border: 70px solid #00FFFF;
     overflow: hidden;
-    box-shadow: 0px 0px 30px 10px black;
+    box-shadow: 0 0 40px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle::before{
+    content: "";
+    position: absolute;
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    background-color: #0B113C;
 }
 
 .Centro p {
@@ -330,7 +340,7 @@ input[type="checkbox"] {
 .Destra {
     color: white;
     font-size: 70px;
-    padding: 40px;
+    padding: 80px;
 }
 
 .Sinistra p,
@@ -341,19 +351,26 @@ input[type="checkbox"] {
 #Btn {
     margin: 0 auto;
     display: block;
-    padding: 20px;
+    padding: 30px;
     width: 15%;
     color: white;
-    font-size: 16px;
+    font-size: 25px;
     cursor: pointer;
     border: 1px solid white;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0 0 30px #430465;
+    box-shadow: 0 0 30px #7303af;
 }
 
-/*FINE CSS RESULTS PAGE*/
+
+#Btn:hover{
+    background-color: #900080;
+}
+
+
+
+/* FINE RESULT PAGE */
 
 /* INIZIO FEEDBACK PAGE */
 
