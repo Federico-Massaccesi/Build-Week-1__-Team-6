@@ -181,7 +181,7 @@ function resetHtml() {
 
 /*FINE SCRIPT CERCHIO*/
 
-//eventlistener Btn rate us 
+//eventlistener Btn rate us
 
 rateUs.addEventListener('click',feedbackPage)
 
@@ -458,5 +458,3 @@ let progress = setInterval(() => {
 // rateUsBtn.onclick = function () {
 //     window.location.href = "feedback.html";
 // };
-
-

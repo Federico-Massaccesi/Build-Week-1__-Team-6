@@ -268,7 +268,7 @@ input[type="checkbox"] {
 #Title {
     color: white;
     text-align: center;
-    font-size: 2em;
+    font-size: 3em;
 
 }
 
@@ -342,7 +342,7 @@ input[type="checkbox"] {
 .Sinistra,
 .Destra {
     color: white;
-    font-size: 60px;
+    font-size: 70px;
     padding: 80px;
 }
 
